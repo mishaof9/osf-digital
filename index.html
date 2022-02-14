@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Boostrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="style.css">
+    <title>OSF Academy</title>
+</head>
+
+<body>
+    <!--overlay starts here-->
+    <div id="overlay">
+
+        <!-- cookies form starts here -->
+        <div id="cookies">
+            <div class="subwrapper">
+                <h6>This website uses cookies</h6>
+                <p>
+                    OSF uses its own and third-party cookies for statistical purposes, to know your preferences, for
+                    website performance and interaction with social media offering publicity tailored to your interests.
+                    If you continue browsing, we consider that you accept its use.<br>
+                    You can expand this information consulting our <a href="#">Cookies Policy Page</a>.
+                    <span id="close-cookies"><i class="fas fa-times"></i></span>
+                </p>
+                <button id="accept-cookies" class="btn">Accept</button>
+            </div>
+        </div>
+
+
+        <!--navbar starting here-->
+        <div class="nav-container mx-auto">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <div class="container osf-logo">
+                    <img src="img/logoosf.png" alt="logo">
+                    <div class="text-sm-center">
+                        <h4 class="osf"> OSF </h4>
+                        <h4 class="academy">Academy</h4>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown mx-2">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item active mx-2">
+                            <a class="nav-link" href="#">Company <span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Library</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                        <li class="nav-item dropdown mx-2 language ">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                EN
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">FR</a>
+                                <a class="dropdown-item" href="#">IT</a>
+                                <a class="dropdown-item" href="#">CN</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown mx-2 money-open">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                $ US
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">EUR</a>
+                                <a class="dropdown-item" href="#">BTC</a>
+                                <a class="dropdown-item" href="#">GBP</a>
+                            </div>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#"><i class="bi bi-search"></i></a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#"><i class="bi bi-person"></i></a>
+                        </li>
+
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#"><i class="bi bi-heart"></i></a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#"><i class="bi bi-bag"></i></a>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!--end of navbar-->
+
+
+
+
+
+
+
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+        <!--banner osf starts here-->
+
+        <div class="row banner-osf" id="box-search">
+            <div class="thumbnail text-center">
+                <img src="img/bannerosf.png" alt="banner" class="img-responsive">
+                <div class="caption">
+                    <p>Sed out perspiciatis une omnis iste natus error sit volptatem accusantium</p>
+                </div>
+            </div>
+        </div>
+        <!--popular items starts here -->
+
+
+
+
+
+
+
+
+
+        
+
+        <!--featured product starts here-->
+        <section class="featured-product wrapper">
+            <div class="row">
+                <h3>Featured Product</h3>
+                <h6>Unde omnis iste natus error sit voluptatem</h6>
+            </div>
+        <!--create div for hr, ///, hr-->
+            <div class="row slider">
+                <a href="#" class="previous round">&#8249;</a>
+                <div class="hr"></div>
+                ///
+                <div class="hr"></div>
+                <a href="#" class="next round">&#8250;</a>
+            </div>
+
+            <div class="cards row">
+                <div class="column col-3">
+                    <div class="my-card">
+                        <img src="img/Layer1.1.1.png">
+                        <p class="card-text">Kristina Dam Oak Table With White Marble</p>
+                        <h5>Awesome</h5>
+                    </div>
+                </div>
+
+                <div class="column col-3">
+                    <div class="my-card">
+                        <img src="img/Layer2.1.1.png">
+                        <p class="card-text">Kristina Dam Oak Table With White Marble</p>
+                        <h5>Marketing</h5>
+                    </div>
+                </div>
+
+                <div class="column col-3">
+                    <div class="my-card">
+                        <img src="img/Layer3.1.1.png">
+                        <p class="card-text">Kristina Dam Oak Table With White Marble</p>
+                        <h5>Awesome</h5>
+                    </div>
+                </div>
+
+                <div class="column col-3">
+                    <div class="my-card">
+                        <img src="img/Layer4.1.1.png">
+                        <p class="card-text">Kristina Dam Oak Table With White Marble</p>
+                        <h5>Marketing</h5>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+        <!--benefits banner starts here-->
+        <section class="benefits">
+            <div class="wrapper row">
+                <div class="column col-4">
+                    <img src="img/focus.png" alt="focus">
+                    <div class="info">
+                        <h4>Focus</h4>
+                        <p>Our unwavering focus on superior service delivery and building next generation competencies.
+                        </p>
+                    </div>
+                </div>
+                <div class="column col-4">
+                    <img src="img/method.png" alt="method">
+                    <div class="info">
+                        <h4>Method</h4>
+                        <p>A standardized methodology designed to deliver measurable business results and predictable
+                            costs.
+                        </p>
+                    </div>
+                </div>
+                <div class="column col-4">
+                    <img src="img/knowledge.png" alt="knowledge">
+                    <div class="info">
+                        <h4>Knowledge</h4>
+                        <p>A highly skilled proactive workforce that reliably improves each client's ROI while
+                            mitigating their bussines risk.</p>
+                    </div>
+                </div>
+
+        </section>
+
+
+
+
+
+
+        <!--footer starts here-->
+        <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-2">
+                        <small>&copy; Copyright 2022.<br>
+                            All rights reserved.</small>
+                        <p><strong>Contact</strong></p>
+                        <p>Headquarters <br>
+                            5600, Blvd. des Galeries, Bur 530 <br>
+                            Quebec,Quebec G2K 2H6. </p>
+                        <p><a href="mailto:contact@osf-global.com" id="mail">contact@osf-global.com</a></p>
+                        <p> <a href="tel:+1(888)548-4333" id="phone">+1(888)548-4333 </a></p>
+                    </div>
+                    <div class="col-2">
+                        <ul class='list-unstyled'>
+                            <li>
+                                <p><strong>Categories</strong></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Alcohol </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Art </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Books </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Drink </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Electronics </a></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-2 second">
+                        <ul class='list-unstyled'>
+                            <li>
+                                <p></p>
+
+                                <p> <a href="">Home </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Jewelry </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Kids &amp; Baby </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Men's Fashion </a> </p>
+                            </li>
+                            <li>
+                                <p> <a href="">Mobile </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Motorcycles </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Movies </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Music </a></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-2 third">
+                        <ul class='list-unstyled'>
+
+                            <li>
+                                <p> <a href="">Sport </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Toys </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Travel </a></p>
+                            </li>
+                            <li>
+                                <p> <a href="">Women's Fashion</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <ul class='list-unstyled'>
+                            <li>
+                                <p><strong>About</strong></p>
+                            </li>
+                            <li>
+                                <p> <a href="">About us </a></p>
+                            <li>
+                                <p> <a href="">Delivery </a></p>
+                            <li>
+                                <p> <a href="">Testimonials </a></p>
+                            <li>
+                                <p> <a href="">Contact </a></p>
+                        </ul>
+
+
+                    </div>
+                    <div class="col-2">
+                        <ul class='list-unstyled osf-social'>
+                            <a href="https://facebook.com/OSFDigital/" target="_blank"><i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://google.com" target="_blank"> <i class="bi bi-google"></i></a>
+                            <a href="https://twitter.com/osfdigital" target="_blank"> <i class="bi bi-twitter"></i></a>
+                            <a href="https://pinterest.com" target="_blank"> <i class="bi bi-pinterest"></i></a>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+</body>
+
+</html>
