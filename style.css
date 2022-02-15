@@ -1,218 +1,290 @@
-
-
-
-
 #cookies {
-    visibility: hidden;
+  visibility: hidden;
 }
-
-
 
 h4 {
-    font-family: 'Lato', sans-serif;
-    text-align: center;
+  font-family: "Lato", sans-serif;
+  text-align: center;
 }
 .osf-logo {
-    width: 200px;
-    margin-top: 1.5rem;
-    margin-right: 256px;
-    margin-left: -16px;
+  width: 200px;
+  margin-top: 1.5rem;
+  margin-right: 256px;
+  margin-left: -16px;
 }
 
-
-.osf-logo img { 
-    float: left;
-    margin-bottom:0.5rem;
+.osf-logo img {
+  float: left;
+  margin-bottom: 0.5rem;
 }
 .osf-logo .osf {
-    color:#011847;
-    font-weight: 900;
-    letter-spacing: 0.28rem;
-    margin-bottom: 0px;
-    text-decoration-style: solid;
-    line-height: 0.8em;
-    font-size: 41px;
-}  
+  color: #011847;
+  font-weight: 900;
+  letter-spacing: 0.28rem;
+  margin-bottom: 0px;
+  text-decoration-style: solid;
+  line-height: 0.8em;
+  font-size: 41px;
+}
 .osf-logo .academy {
-    color:#84bc22;
-    font-weight: 400;
-    font-size: 18px;
-    letter-spacing: 0.1rem;
-    line-height: 1.5em;
-}   
+  color: #84bc22;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.1rem;
+  line-height: 1.5em;
+}
 .nav-container {
-    display:flex;
-    width:100%;
-    position: relative;
-    justify-content:center;
-    vertical-align: top;
-    align-items: baseline;
-    margin-top: 1.5rem;
-    
-    row-gap: 10px;
-    column-gap: 20px;
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  vertical-align: top;
+  align-items: baseline;
+  margin-top: 1.5rem;
 
+  row-gap: 10px;
+  column-gap: 20px;
 }
 .nav-item {
-    font-family: Lato, sans-serif;
-    font: size 19px; ;
+  font-family: Lato, sans-serif;
+  font: size 19px;
 }
 /* footer*/
 footer {
-    font-family: 'Lato', sans-serif;
-    font-size: 13pt;
-    display: flex;
-    max-width: 100%;
-    position:sticky;
-    flex-flow:column;
-    text-decoration: none;
-    padding-top: 30px;
-    padding-left: 50px;
+  font-family: "Lato", sans-serif;
+  font-size: 13pt;
+  display: flex;
+  max-width: 100%;
+  position: sticky;
+  flex-flow: column;
+  text-decoration: none;
+  padding-top: 30px;
+  padding-left: 50px;
 }
-footer .second{
-    padding-top: 25px;
+footer .second {
+  padding-top: 25px;
 }
-footer .third{
-    padding-top:40px ;
+footer .third {
+  padding-top: 40px;
 }
 footer a {
-    text-decoration: none;
-    color:#b1afae;
+  text-decoration: none;
+  color: #b1afae;
 }
 
-#mail, #phone {
-    color: black;
+#mail,
+#phone {
+  color: black;
 }
 
 .osf-social a {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 /* benefits banner*/
 .benefits {
-   display: inline-block;
-   width: 100%;
-   background-color: #45413e;
-  
-   font-size: 18px;
-   background-position: 85% 50%;
-   background-size: 9.6px;
-   
+  display: inline-block;
+  width: 100%;
+  background-color: #45413e;
+
+  font-size: 18px;
+  background-position: 85% 50%;
+  background-size: 9.6px;
 }
 .benefits h4 {
-    color:#ffffff;
-    font-family: Lato,sans-serif Bold;
-    text-align:left;
-    margin-top:36px;
-    
+  color: #ffffff;
+  font-family: Lato, sans-serif Bold;
+  text-align: left;
+  margin-top: 36px;
 }
 .benefits p {
-    color:#7d7a77;
-    text-align:left;
-    margin-bottom: 50px;
-    margin-right: auto;
-    font-family:Lato Regular,sans-serif ;
-    font-size: 16px;
-   
-    
+  color: #7d7a77;
+  text-align: left;
+  margin-bottom: 50px;
+  margin-right: auto;
+  font-family: Lato Regular, sans-serif;
+  font-size: 16px;
 }
-.benefits img{
-    margin-top: 80px;
-    margin-left: 16px;
-    float:left;
-    margin-right: 32px;
+.benefits img {
+  margin-top: 80px;
+  margin-left: 16px;
+  float: left;
+  margin-right: 32px;
 }
-
 
 .banner-osf {
-    max-width: 100%;
-    height: 445px;
+  max-width: 100%;
+  height: 445px;
 }
 .thumbnail {
-    position: relative;
+  position: relative;
 }
 
 .caption {
-    position: absolute;
-    top: 45%;
-    left: 0;
-    width: 100%;
-    color:#ffffff;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  color: #ffffff;
 }
 .featured-product {
-    background-color: #262a32;
-    max-width: 100%;
-    height: 550px;
-
+  background-color: #262a32;
+  max-width: 100%;
+  height: 550px;
 }
 
-.featured-product h3{
-    color:#ffffff;
-    text-align:center;
-    margin-top: 30px;
+.featured-product h3 {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 30px;
 }
-.featured-product h6{
-    color:#ffffff;
-    text-align:center;
-
+.featured-product h6 {
+  color: #ffffff;
+  text-align: center;
 }
 .hr {
-    display: inline-block;
-    border-top: 1px solid #ffffff; 
-    width: 235px;
-    margin: 17px; 
-      
+  display: inline-block;
+  border-top: 1px solid #ffffff;
+  width: 235px;
+  margin: 17px;
 }
 .slider {
-   justify-content: center;
-    margin-left: -9px;
-    color:#ffffff;
-    
+  justify-content: center;
+  margin-left: -9px;
+  color: #ffffff;
 }
 .slider a {
-    text-decoration: none;
-    display: inline-block;
-  
+  text-decoration: none;
+  display: inline-block;
 }
 .previous {
-    width: 30px;
-    height: 30px;
-    color: rgb(253, 253, 253);
-    background-color: #2d343a;
-    margin-top: -5px;
-  }
-  
-  .next {
-    width:30px;
-    height: 30px;
-    color:rgb(255, 255, 255);
-    background-color: #2d343a;
-    margin-top: -5px;
-  }
-  
-  .round {
-    border-radius: 10%;
-  }
+  width: 30px;
+  height: 30px;
+  color: rgb(253, 253, 253);
+  background-color: #2d343a;
+  margin-top: -5px;
+}
+
+.next {
+  width: 30px;
+  height: 30px;
+  color: rgb(255, 255, 255);
+  background-color: #2d343a;
+  margin-top: -5px;
+}
+
+.round {
+  border-radius: 10%;
+}
 .my-card {
-    border-radius: 5px;
-    overflow: hidden;
-    background: white;
-    width: 230px;
-    margin-top: 40px;
-    margin-left: 50px;
-    margin-right: 12px;
-    align-self: center;
+  border-radius: 5px;
+  overflow: hidden;
+  background: white;
+  width: 230px;
+  margin-top: 40px;
+  margin-left: 50px;
+  margin-right: 12px;
+  align-self: center;
 }
 
-
-.card-text{
-    text-align: center;
-    font-family: Lato, sans-serif;
-    font-size: 20px;
+.card-text {
+  text-align: center;
+  font-family: Lato, sans-serif;
+  font-size: 20px;
 }
-.my-card h5{
-    color:#84bc22;
-    text-align: center;
-    font-family: Lato ExtraBold, sans-serif;
-    font-size: 18px;
-    
+.my-card h5 {
+  color: #84bc22;
+  text-align: center;
+  font-family: Lato ExtraBold, sans-serif;
+  font-size: 18px;
+}
+/*popular items*/
+.popular-items {
+  background-color: #262a32;
+  max-width: 100%;
+
+  padding-bottom: 50px;
+}
+.popular-items h4 {
+  color: #ffffff;
+  text-align: center;
+  font-family: Lato ExtraBold, sans-serif;
+  font: size 20px;
+  padding-top: 2px;
+  width: fit-content;
+}
+.popular-items .card-text {
+  text-align: center;
+  font-family: Lato, sans-serif;
+  font-size: 15px;
+  color: black;
+  padding-top: 20px;
+}
+.popular-items .last-text {
+  margin-top: -200px;
+  color: #ffffff;
+}
+.popular-items .my-card {
+  border-radius: 5px;
+  overflow: hidden;
+  background: white;
+  width: 240px;
+  height: 340px;
+  margin-top: 40px;
+  margin-left: 35px;
+  margin-right: 12px;
+  align-self: center;
+}
+.popular-items .column {
+  margin-right: -85px;
+  margin-left: 50px;
+}
+
+.popular-items .button {
+  margin-top: 50px;
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-bottom: 45px;
+  background-color: #262a32;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 16px;
+  width: 250px;
+  font-size: 18px;
+}
+
+.popular-items .btn-group {
+  padding-left: 25px;
+  padding-right: 0px;
+  padding-bottom: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: -25px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-size: 14px;
+}
+.price {
+  color: #84bc22;
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+.text-btn {
+  color: black;
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+
+.popular-items .hr {
+  border-top: 2px solid #3c4047;
+  width: 475px;
+}
+.divider {
+  padding: 60px 53px 50px 53px;
+  align-self: center;
+  margin-left: 25px;
 }
