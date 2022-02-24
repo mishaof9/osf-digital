@@ -1,38 +1,108 @@
 <script>
-	import Navbar from '$lib/Navbar.svelte';
-	import Footer from '$lib/Footer.svelte';
 	import Benefits from '$lib/Benefits.svelte';
+	import CardRow from '$lib/CardRow.svelte';
+	import Card from '$lib/Card.svelte';
+	import ProductCard from '$lib/ProductCard.svelte';
+	import DragonsMisbeaving from '$lib/DragonsMisbeaving.svelte';
 </script>
 
-<Navbar />
-
 <!--carousel banner-->
-<section class="carousel-wrapper">
-	<div class="carousel-container row">
-		<div class="column col-lg-9">
-			<img src="static/img/carousel/carouselbanner.png" alt="carousel-banner" />
-			<div class="top-left">Control and manage any<br /> device with cloud solutions</div>
-			<div class="bottom-left">
-				Improve business perfomance and the user experience<br /> with the right mix of IoT technology
-				and processes
-			</div>
-			<div class="bottom-left button btn-view">View more</div>
+<section class="carousel-container row">
+	<div
+		id="carouselExampleCaptions"
+		class="carousel slide col-lg-9"
+		data-bs-ride="false"
+		data-bs-interval="false"
+	>
+		<div class="carousel-indicators">
+			<button
+				type="button"
+				data-bs-target="#carouselExampleCaptions"
+				data-bs-slide-to="0"
+				class="active"
+				aria-current="true"
+				aria-label="Slide 1"
+			/>
+			<button
+				type="button"
+				data-bs-target="#carouselExampleCaptions"
+				data-bs-slide-to="1"
+				aria-label="Slide 2"
+			/>
+			<button
+				type="button"
+				data-bs-target="#carouselExampleCaptions"
+				data-bs-slide-to="2"
+				aria-label="Slide 3"
+			/>
 		</div>
-		<div class="sales-container column col-lg-3">
-			<img src="static/img/pdp/holidaysattribute.png" alt="holidaysattribute" />
-			<div class="top-center">55%</div>
-			<div class="bottom-center">Summer<br /> Sales</div>
-			<div class="right-center "> Follow us on Facebook</div>
-			<div class="bottom-right ">
-				Sed ut perspiciatis unde omnis iste <br /> natus error sit voluptatem
+		<div class="carousel-inner">
+			<div class="carousel-item active first-slide">
+				<img src="static/img/carousel/carousel.png" class="d-block w-100" alt="carousel-center" />
+				<div class="carousel-text d-none d-md-block">
+					<h5>Control and manage any<br /> device with cloud solutions</h5>
+					<p>
+						Improve business perfomance and the user experience<br /> with the right mix of IoT technology
+						and processes.
+					</p>
+					<div class="bottom-left button btn-view">View more</div>
+				</div>
 			</div>
-			<div class="btn-fb">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
-					><path
-						d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
-					/></svg
-				>Follow
+			<div class="carousel-item second-slide">
+				<img
+					src="static/img/carousel/carousel-center.jpg"
+					class="d-block w-100"
+					alt="carousel-center"
+				/>
+				<div class="carousel-text d-none d-md-block">
+					<h5>Control and manage any<br /> device with cloud solutions</h5>
+					<p>
+						Improve business perfomance and the user experience<br /> with the right mix of IoT technology
+						and processes.
+					</p>
+					<div class="bottom-left button btn-view">View more</div>
+				</div>
 			</div>
+			<div class="carousel-item third-slide">
+				<img src="static/img/carousel/slider3.jpg" class="d-block w-100" alt="carousel-right" />
+				<div class="carousel-text d-none d-md-block">
+					<h5>Control and manage any<br /> device with cloud solutions</h5>
+					<p>
+						Improve business perfomance and the user experience<br /> with the right mix of IoT technology
+						and processes.
+					</p>
+					<div class="button btn-view">View more</div>
+				</div>
+			</div>
+		</div>
+		<button
+			class="carousel-control-prev"
+			type="button"
+			data-bs-target="#carouselExampleCaptions"
+			data-bs-slide="prev"
+		/>
+		<button
+			class="carousel-control-next"
+			type="button"
+			data-bs-target="#carouselExampleCaptions"
+			data-bs-slide="next"
+		/>
+	</div>
+
+	<div class="sales-container column col-lg-3">
+		<img src="static/img/pdp/holidaysattribute.png" alt="holidaysattribute" />
+		<div class="top-center">55%</div>
+		<div class="bottom-center">Summer<br /> Sales</div>
+		<div class="right-center ">Follow us on Facebook</div>
+		<div class="bottom-right ">
+			Sed ut perspiciatis unde omnis iste <br /> natus error sit voluptatem
+		</div>
+		<div class="btn-fb">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+				><path
+					d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+				/></svg
+			> <a href="https://www.facebook.com/OSFDigital/">Follow</a>
 		</div>
 	</div>
 </section>
@@ -44,67 +114,49 @@
 		<h4>Popular Items</h4>
 		<div class="hr" />
 	</div>
-	<div class="cards row">
-		<div class="column col-3">
-			<div class="my-card">
-				<img src="static/img/popularitems/popularitems1.png" />
-				<p class="card-text">Kristina Dam Oak Table With White Marble Top <br /> $799.55</p>
-			</div>
-		</div>
-		<div class="column col-3">
-			<div class="my-card">
-				<img src="static/img/popularitems/popularitems2.png" />
-				<p class="card-text">Hay-About A Lounge Chair AAL 93</p>
-				<div class="btn-group">
-					<button type="button" class="btn btn-secondary price">$659.55</button>
-					<button type="button" class="btn btn-secondary text-btn">BUY NOW</button>
-				</div>
-			</div>
-		</div>
-		<div class="column col-3">
-			<div class="my-card card-overlay ">
-				<img src="static/img/popularitems/popularitems3.png" />
-				<div class="overlay">
-					<i class="bi bi-plus" />
-					<i class="bi bi-heart-fill" />
-				</div>
-				<p class="card-text">Activate Facial Mask and Charcoal Soap</p>
-			</div>
-		</div>
-		<div class="column col-3">
-			<div class="my-card">
-				<img src="static/img/popularitems/popularitems4.png" />
-				<p class="card-text">Cocktail Table Walnut <br />|YES <br />$299.99</p>
-			</div>
-		</div>
-	</div>
-	<div class="cards row">
-		<div class="column col-3">
-			<div class="my-card">
-				<img src="static/img/popularitems//popularitems5.png" />
-				<p class="card-text">Hay-About A Lounge Chair AAL 93 <br />$659.55</p>
-			</div>
-		</div>
-		<div class="column col-3">
-			<div class="my-card">
-				<img src="static/img/popularitems/popularitems6.png" />
-				<p class="card-text">Tory Desk Calendar<br />$410.99</p>
-			</div>
-		</div>
-		<div class="column col-3">
-			<div class="my-card">
-				<img src="static/img/popularitems/popularitems7.png" />
-				<p class="card-text">CH445 Wing Chair on Suite NY <br />$330.55</p>
-			</div>
-		</div>
-		<div class="column col-3">
-			<div class="my-card cardx-overlay">
-				<img src="static/img/popularitems/popularitems8.png" />
-				<p class="card-text last-text">My dragons are misbehaving again.<br />Unbelieveable!</p>
-				<div class="overlay" />
-			</div>
-		</div>
-	</div>
+	<CardRow>
+		<ProductCard
+			name="Kristina Dam Oak Table With White Marble Top"
+			img="static/img/popularitems/item1.png"
+			price="799.55"
+		/>
+		<ProductCard
+			name="Hay-About A Lounge Chair AAL 93"
+			img="static/img/popularitems/item2.png"
+			price="659.55"
+			discounted={true}
+		/>
+		<ProductCard
+			name="Activate Facial Mask and Charcoal Soap"
+			img="static/img/popularitems/item3.png"
+			price="129.55"
+		/>
+		<ProductCard
+			name="Cocktail Table Walnut"
+			img="static/img/popularitems/item4.png"
+			price="299.99"
+		/>
+	</CardRow>
+	<CardRow>
+		<ProductCard
+			name="Hay-About A Lounge Chair AAL 93"
+			img="static/img/popularitems/item5.png"
+			price="659.55"
+		/>
+		<ProductCard
+			name="Tory Desk Calendar"
+			img="static/img/popularitems/item6.png"
+			price="410.99"
+			discounted={true}
+		/>
+		<ProductCard
+			name="CH445 Wing Chair on Suite NY"
+			img="static/img/popularitems/item7.png"
+			price="330.55"
+		/>
+		<DragonsMisbeaving />
+	</CardRow>
+
 	<div class="row">
 		<button class="button">Load more</button>
 	</div>
@@ -136,43 +188,39 @@
 		<a href="#" class="next round">&#8250;</a>
 	</div>
 
-	<div class="cards row">
-		<div class="column col-3">
-			<div class="my-card">
+	<CardRow>
+		<Card height="295">
+			<div class="featured">
 				<img src="static/img/cards/calendar.png" />
-				<p class="card-text">Kristina Dam Oak Table With White Marble</p>
+				<p>Kristina Dam Oak Table With White Marble</p>
 				<h5>Awesome</h5>
 			</div>
-		</div>
-
-		<div class="column col-3">
-			<div class="my-card">
+		</Card>
+		<Card height="295">
+			<div class="featured">
 				<img src="static/img/cards/gracioushome.png" />
 				<p class="card-text">Kristina Dam Oak Table With White Marble</p>
 				<h5>Marketing</h5>
 			</div>
-		</div>
-
-		<div class="column col-3">
-			<div class="my-card">
+		</Card>
+		<Card height="295">
+			<div class="featured">
 				<img src="static/img/cards/pen.png" />
-				<p class="card-text">Kristina Dam Oak Table With White Marble</p>
+				<p>Kristina Dam Oak Table With White Marble</p>
 				<h5>Awesome</h5>
 			</div>
-		</div>
-
-		<div class="column col-3">
-			<div class="my-card">
+		</Card>
+		<Card height="295">
+			<div class="featured">
 				<img src="static/img/cards/salesforce.png" />
-				<p class="card-text">Kristina Dam Oak Table With White Marble</p>
+				<p>Kristina Dam Oak Table With White Marble</p>
 				<h5>Marketing</h5>
 			</div>
-		</div>
-	</div>
+		</Card>
+	</CardRow>
 </section>
 
 <Benefits />
-<Footer />
 
 <style>
 	/*banner osf*/
@@ -241,84 +289,18 @@
 	.round {
 		border-radius: 10%;
 	}
-	.my-card {
-		border-radius: 5px;
-		overflow: hidden;
-		background: white;
-		width: 230px;
-		margin-top: 40px;
-		margin-left: 50px;
-		margin-right: 12px;
-		align-self: center;
-	}
 
-	.card-text {
+	.featured p {
 		text-align: center;
-		font-family: Lato, sans-serif;
 		font-size: 20px;
 	}
-	.my-card h5 {
+	.featured h5 {
 		color: #84bc22;
 		text-align: center;
 		font-family: Lato ExtraBold, sans-serif;
 		font-size: 18px;
 	}
 	/*popular items*/
-	.card-overlay {
-		position: relative;
-		width: 50%;
-	}
-	.overlay {
-		position: absolute;
-		top: 0;
-		height: 100%;
-		width: 100%;
-		opacity: 0;
-		transition: 0.1s linear;
-		background-color: rgba(53, 202, 126, 0.8);
-	}
-
-	.overlay i {
-		border-radius: 50%;
-		font-size: 3rem;
-		width: 70px;
-		height: 70px;
-		display: inline-block;
-		background-color: white;
-	}
-
-	.overlay .bi-plus {
-		color: #23c46e;
-		margin-left: 40px;
-		margin-top: 140px;
-		padding: 0px 10px;
-	}
-	.overlay .bi-heart-fill {
-		color: #e73c68;
-		margin-top: 140px;
-		margin-left: 15px;
-		padding: 0px 10px;
-	}
-	.card-overlay:hover .overlay {
-		opacity: 1;
-	}
-	.cardx-overlay {
-		position: relative;
-		width: 50%;
-	}
-	.cardx-overlay .overlay {
-		position: absolute;
-		top: 0;
-		height: 100%;
-		width: 100%;
-		opacity: 0;
-		transition: 0.1s linear;
-		background: rgb(106, 93, 143);
-		background: linear-gradient(0deg, rgba(106, 93, 143, 0.8) 0%, rgba(203, 100, 138, 0.8) 100%);
-	}
-	.cardx-overlay:hover .overlay {
-		opacity: 1;
-	}
 
 	.popular-items {
 		background-color: #262a32;
@@ -333,32 +315,6 @@
 		font: size 20px;
 		padding-top: 2px;
 		width: fit-content;
-	}
-	.popular-items .card-text {
-		text-align: center;
-		font-family: Lato, sans-serif;
-		font-size: 15px;
-		color: black;
-		padding-top: 20px;
-	}
-	.popular-items .last-text {
-		margin-top: -200px;
-		color: #ffffff;
-	}
-	.popular-items .my-card {
-		border-radius: 5px;
-		overflow: hidden;
-		background: white;
-		width: 240px;
-		height: 340px;
-		margin-top: 40px;
-		margin-left: 35px;
-		margin-right: 12px;
-		align-self: center;
-	}
-	.popular-items .column {
-		margin-right: -85px;
-		margin-left: 50px;
 	}
 
 	.popular-items .button {
@@ -378,34 +334,6 @@
 		font-size: 18px;
 	}
 
-	.popular-items .btn-group {
-		padding-left: 25px;
-		padding-right: 0px;
-		padding-bottom: 25px;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		margin: -25px 2px;
-		cursor: pointer;
-		border-radius: 16px;
-		font-size: 14px;
-	}
-	.price {
-		color: #84bc22;
-		background-color: #ffffff;
-		border-radius: 16px;
-	}
-	.text-btn {
-		color: black;
-		background-color: #ffffff;
-
-		border-top-left-radius: 0px;
-		border-bottom-left-radius: 0;
-		border-top-right-radius: 16px;
-		border-bottom-right-radius: 16px;
-		margin-left: -4px;
-	}
-
 	.popular-items .hr {
 		border-top: 2px solid #3c4047;
 		width: 400px;
@@ -416,21 +344,71 @@
 		margin-left: 25px;
 	}
 	/*carousel-banner*/
+
+	.carousel-item h5 {
+		font-family: Myriad Pro;
+		font-weight: bold;
+		font-size: 50px;
+	}
+	.carousel-item p {
+		font-family: Myriad Pro;
+		font-size: 18px;
+	}
+	.carousel-item img {
+		width: 807px;
+		height: 505px;
+	}
+	.first-slide .carousel-text {
+		position: absolute;
+		top: 80px;
+		left: 60px;
+		color: #ffffff;
+	}
+	.first-slide .carousel-text h5 {
+		margin-bottom: 90x;
+	}
+	.first-slide .carousel-text .btn-view {
+		margin-top: 50px;
+	}
+	.second-slide .carousel-text {
+		position: absolute;
+		top: 80px;
+		left: 150px;
+		color: #ffffff;
+		text-align: center;
+	}
+	.second-slide .carousel-text h5 {
+		margin-bottom: 100px;
+	}
+	.second-slide .carousel-text .btn-view {
+		margin-top: 30px;
+		margin-left: -60px;
+	}
+	.third-slide .carousel-text {
+		position: absolute;
+		top: 80px;
+		right: 75px;
+		color: #ffffff;
+		text-align: right;
+	}
+	.third-slide .carousel-text h5 {
+		margin-bottom: 100px;
+	}
+	.third-slide .carousel-text .btn-view {
+		margin-top: 30px;
+		right: 0px;
+	}
 	.carousel-container {
 		position: relative;
-		width: 100%;
-		margin-bottom: 30px;
-		margin-right: 50px;
-		margin-left: 20px;
+		padding: 26px 56px;
+        background-color: #ffffff;
 	}
-	.bottom-left {
-		position: absolute;
-		bottom: 175px;
-		left: 70px;
-		color: #ffffff;
-		font-family: Lato Regular;
-		font-size: 15px;
-	}
+
+    .carousel-indicators button {
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+    }
 
 	.top-left {
 		position: absolute;
@@ -450,14 +428,16 @@
 		text-decoration: none;
 		text-transform: uppercase;
 		display: inline-block;
-		margin: -100px 15px;
+		position: absolute;
+        font-family: Lato Regular;
+		font-size: 15px;
 		cursor: pointer;
 		border-radius: 16px;
 	}
 	/*sales wraper*/
 	.sales-container {
 		position: relative;
-		padding-left: 0px;
+		padding-left: 20px;
 	}
 	.top-center {
 		position: absolute;
@@ -465,7 +445,6 @@
 		left: 13%;
 		color: #ffffff;
 		font-size: 100px;
-		font-family: Lato;
 		font-weight: bold;
 	}
 	.bottom-center {
@@ -474,17 +453,15 @@
 		left: 20%;
 		color: #ffffff;
 		font-size: 32px;
-		font-family: Lato;
 		text-transform: uppercase;
 		text-align: center;
 	}
 	.right-center {
 		position: absolute;
 		top: 69%;
-		left: 6%;
+		left: 8%;
 		color: #45413e;
 		font-size: 24px;
-		font-family: Lato;
 		text-align: center;
 	}
 	.bottom-right {
@@ -493,7 +470,6 @@
 		left: 8%;
 		color: #45413e;
 		font-size: 15px;
-		font-family: Lato;
 		text-align: center;
 	}
 	.btn-fb {
@@ -512,7 +488,6 @@
 		border-radius: 20px;
 		text-transform: uppercase;
 		text-align: center;
-		font-family: Lato;
 		font-size: 14px;
 	}
 
@@ -522,52 +497,18 @@
 		float: left;
 		padding-left: 14px;
 	}
-
-	.info {
-		display: grid;
-		padding-left: 75px;
-		padding-top: 35px;
-	}
-	.info h3 {
-		font-family: Lato;
-		font-size: 26px;
-		font-weight: bold;
-		padding-bottom: 10px;
-	}
-	.info p {
-		font-family: Lato;
-		font-size: 18px;
-		padding-top: 0px;
-		margin-top: 5px;
-	}
-	.info a {
-		font-family: Lato;
-		font-size: 20px;
-		color: #84bc22;
+	.btn-fb a {
 		text-decoration: none;
-		padding-top: 10px;
-		padding-bottom: 10px;
+		color: #3b5998;
 	}
-	.info .search {
-		position: relative;
-		width: 80%;
+	.btn-fb:hover {
+		opacity: 1;
+		background-color: #3b5998;
 	}
-	.info .search > input {
-		border-radius: 35px;
-		border: 3px solid #f1edea;
-		padding: 5px 10px;
-		width: 100%;
-		color: #45413e;
-		font-size: 12px;
-		margin-top: 10px;
+	.btn-fb:hover a {
+		color: #ffffff;
 	}
-	.search i {
-		position: absolute;
-		right: 15px;
-		top: 15px;
-		fill: #45413e;
-	}
-	.info .search > input:focus {
-		border-color: #45413e;
+	.btn-fb:hover svg {
+		fill: #ffffff;
 	}
 </style>

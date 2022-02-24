@@ -63,7 +63,6 @@
 	}
 	h3 {
 		margin-top: 50px;
-		font-family: Lato;
 		font-weight: bold;
 	}
 	input[name='email'] {
@@ -99,13 +98,11 @@
 	.forgot a {
 		text-decoration: none;
 		color: #84bc22;
-		font-family: Lato;
 		font-size: 16px;
 	}
 	.register {
 		text-decoration: none;
 		color: #84bc22;
-		font-family: Lato;
 		font-size: 16px;
 	}
 	label[for='email'] {

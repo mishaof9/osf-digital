@@ -1,21 +1,16 @@
 <script>
-	import Navbar from '$lib/Navbar.svelte';
-	import Footer from '$lib/Footer.svelte';
 	import Benefits from '$lib/Benefits.svelte';
-
-    
-
+	import CardRow from '$lib/CardRow.svelte';
+	import ProductCard from '$lib/ProductCard.svelte';
 </script>
-
-<Navbar />
 
 <!--product detailed page-->
 <section class="product-page">
 	<div class="wrapper home-product">
 		<ul>
-			<li class="li-hm"><a href="index.html">Home</a></li>
+			<li class="li-hm"><a href="/">Home</a></li>
 			<li class="li-slash">/</li>
-			<li class="li-osf-theme"><a href="index.html">OSF Theme</a></li>
+			<li class="li-osf-theme"><a href="/">OSF Theme</a></li>
 			<li class="li-slash">/</li>
 			<li class="li-description">Ruffle Front V-Neck Cardigan</li>
 		</ul>
@@ -124,36 +119,31 @@
 		<h4>Popular Items</h4>
 		<div class="hr" />
 	</div>
-	<div class="cards row">
-		<div class="column col-3">
-			<div class="my-card">
-				<img src="static/img/popularitems/back1.png" />
-				<p class="card-text card2">Kristina Dam Oak Table With White Marble Top <br /> $799.55</p>
-			</div>
-		</div>
-		<div class="column col-3">
-			<div class="my-card">
-				<img src="static/img/popularitems/back2.png" />
-				<p class="card-text card2">Kristina Dam Oak Table With White Marble Top<br />$2195.00</p>
-			</div>
-		</div>
-		<div class="column col-3">
-			<div class="my-card">
-				<img src="static/img/popularitems/back3.png" />
-				<p class="card-text card2">Activate Facial Mask and Charcoal Soap <br />$129.55</p>
-			</div>
-		</div>
-		<div class="column col-3">
-			<div class="my-card">
-				<img src="static/img/popularitems/back4.png" />
-				<p class="card-text card2 ">Cocktail Table Walnut <br />|YES <br />$629.99</p>
-			</div>
-		</div>
-	</div>
+	<CardRow>
+		<ProductCard
+			name="Kristina Dam Oak Table With White Marble Top"
+			img="static/img/popularitems/back1.png"
+			price="799.55"
+		/>
+		<ProductCard
+			name="Kristina Dam Oak Table With White Marble Top"
+			img="static/img/popularitems/back2.png"
+			price="2195.00"
+		/>
+		<ProductCard
+			name="Activate Facial Mask and Charcoal Soap"
+			img="static/img/popularitems/back3.png"
+			price="129.55"
+		/>
+		<ProductCard
+			name="Cocktail Table Walnut|YES  "
+			img="static/img/popularitems/back4.png"
+			price="629.99"
+		/>
+	</CardRow>
 </section>
 
 <Benefits />
-<Footer />
 
 <style>
 	/*product page*/
@@ -168,7 +158,6 @@
 	}
 
 	.home-product h2 {
-		font-family: Lato;
 		font-weight: bold;
 		font-size: 44px;
 		padding-left: 50px;
@@ -182,14 +171,12 @@
 	}
 	.li-hm a {
 		text-decoration: none;
-		font-family: Lato;
 		font-size: 17px;
 		color: #84bc22;
 		font-weight: bold;
 	}
 	.li-osf-theme a {
 		text-decoration: none;
-		font-family: Lato;
 		font-size: 17px;
 		color: #84bc22;
 		font-weight: bold;
@@ -223,7 +210,6 @@
 		margin-top: 20px;
 	}
 	.about .price {
-		font-family: Lato;
 		font-size: 44px;
 		font-weight: bold;
 		color: #262a32;
@@ -302,7 +288,6 @@
 		color: #7d7a77;
 	}
 	.about p {
-		font-family: Lato;
 		font-size: 16px;
 	}
 	.cart-btn {
@@ -325,7 +310,6 @@
 		padding-bottom: 30px;
 		color: #84bc22;
 		margin-right: 250px;
-		font-family: Lato;
 		font-size: 18px;
 	}
 
@@ -384,7 +368,6 @@
 		color: #ffffff;
 		margin-bottom: 30px;
 
-		font-family: Lato;
 		font-size: 18px;
 		line-height: 1.5;
 	}
@@ -399,7 +382,7 @@
 	}
 	/*popular items */
 	.popular-items {
-		background-color: #ffffff;
+	
 		max-width: 100%;
 
 		padding-bottom: 50px;
@@ -415,7 +398,6 @@
 	}
 	.popular-items .card-text {
 		text-align: center;
-		font-family: Lato, sans-serif;
 		font-size: 15px;
 		color: black;
 		padding-top: 130px;

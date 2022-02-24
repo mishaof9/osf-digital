@@ -120,7 +120,6 @@
 <style>
 	/* footer*/
 	footer {
-		font-family: 'Lato', sans-serif;
 		font-size: 13pt;
 		display: flex;
 		max-width: 100%;

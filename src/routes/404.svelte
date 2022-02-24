@@ -1,13 +1,6 @@
-<script>
-	import Navbar from '$lib/Navbar.svelte';
-	import Footer from '$lib/Footer.svelte';
-</script>
-
-<Navbar />
-
 <div class="wrapper home-404">
 	<ul>
-		<li class="li-home"><a href="index.html">Home</a></li>
+		<li class="li-home"><a href="index.svelte">Home</a></li>
 		<li class="li-empty">/</li>
 		<li class="li-404">404</li>
 	</ul>
@@ -29,7 +22,7 @@
 			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula<br />
 			eget dolor. Aenean massa.
 		</p>
-		<a href="index.html">Go back to Homepage</a>
+		<a href="index.svelte">Go back to Homepage</a>
 		<h3>Search our site</h3>
 		<div class="search">
 			<input type="text" placeholder="SEARCH" />
@@ -38,12 +31,7 @@
 	</div>
 </div>
 
-<Footer />
-
 <style>
-	body {
-		background-color: #f1edea;
-	}
 	.main-error {
 		background-color: #ffffff;
 		margin-left: 50px;
@@ -67,13 +55,11 @@
 	}
 	.li-home a {
 		text-decoration: none;
-		font-family: Lato;
 		font-size: 17px;
 		color: #84bc22;
 		font-weight: bold;
 	}
 	.li-404 {
-		font-family: Lato;
 		font-size: 17px;
 		color: black;
 		font-weight: bold;
@@ -84,7 +70,6 @@
 	}
 	.home-404 h2 {
 		text-align: center;
-		font-family: Lato;
 		font-size: 64px;
 		margin-left: 30px;
 		padding-top: 20px;
@@ -99,7 +84,6 @@
 	.oops .centered {
 		margin-top: 55px;
 		margin-left: 30px;
-		font-family: Lato;
 		font-size: 125px;
 		font-weight: bold;
 		color: #84bc22;
@@ -111,19 +95,16 @@
 		padding-top: 35px;
 	}
 	.info h3 {
-		font-family: Lato;
 		font-size: 26px;
 		font-weight: bold;
 		padding-bottom: 10px;
 	}
 	.info p {
-		font-family: Lato;
 		font-size: 18px;
 		padding-top: 0px;
 		margin-top: 5px;
 	}
 	.info a {
-		font-family: Lato;
 		font-size: 20px;
 		color: #84bc22;
 		text-decoration: none;
