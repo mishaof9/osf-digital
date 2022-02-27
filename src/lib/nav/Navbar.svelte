@@ -1,11 +1,17 @@
 <script>
-	import Cookies from '$lib/Cookies.svelte';
-	import Login from '$lib/Login.svelte';
-	let showLogin = false;
+	import Cookies from '$lib/modals/Cookies.svelte';
+	import Login from '$lib/modals/Login.svelte';
+	let show_cookies = true;
+	let show_login = false;
 </script>
 
+{#if show_cookies}
+	<Cookies on:close={() => show_cookies = false}/>
+{/if}
 
-<Login bind:show={showLogin} />
+{#if show_login}
+	<Login on:close={() => show_login = false} />
+{/if}
 
 <!--navbar starting here-->
 
@@ -119,7 +125,7 @@
 			<ul class="navbar-nav ms-auto ">
 				<li class="nav-item"><a class="nav-link" href=""><i class="bi bi-search" /></a></li>
 				<li class="nav-item">
-					<a class="nav-link" on:click={() => (showLogin = true)}><i class="bi bi-person" /></a>
+					<a class="nav-link" on:click={() => (show_login = true)}><i class="bi bi-person" /></a>
 				</li>
 				<li class="nav-item notification">
 					<a class="nav-link" href="#"> <i class="bi bi-heart" /></a>
@@ -163,7 +169,7 @@
 	/* ============ mobile view .end// ============ */
 
 	.navbar {
-		height: 80px;
+		height: 90px;
 		padding: 0;
 		background-color: #fff;
 	}
@@ -282,7 +288,7 @@
 
 	.osf-logo img {
 		float: left;
-		margin-bottom: 0.5rem;
+		
 	}
 	.osf-logo .osf {
 		color: #011847;

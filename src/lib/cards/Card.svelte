@@ -1,17 +1,15 @@
 <script>
-    export let height = 365;
 </script>
 
-<div style:height="{height}px">
+<div>
     <slot />
 </div>
 
 <style>
 	div {
-		display: inline-block;
 		width: 270px;
-		margin: 15px;
 		overflow: hidden;
+        padding: 0;
 
 		border: none;
 		border-radius: 5px;

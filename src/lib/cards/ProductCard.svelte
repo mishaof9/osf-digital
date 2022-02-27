@@ -1,31 +1,37 @@
 <script>
-	import Card from '$lib/Card.svelte';
+	import Card from '$lib/cards/Card.svelte';
 
-	export let img;
+	export let image;
 	export let name;
 	export let price;
 	export let discounted = false;
 </script>
 
 <Card>
-	<img src={img} alt={name} />
-	<p class="name">{name}</p>
-	{#if discounted}
-		<div class="btn-group discounted">
-			<button type="button" class="btn discount-price">$ {price}</button>
-			<button type="button" class="btn buynow">BUY NOW</button>
-		</div>
-	{:else}
-		<p class="price">$ {price}</p>
-	{/if}
+	<div class="product">
+		<img src={image} alt={name} />
+		<p class="name">{name}</p>
+		{#if discounted}
+			<div class="btn-group discounted">
+				<button type="button" class="btn discount-price">$ {price}</button>
+				<button type="button" class="btn buynow">BUY NOW</button>
+			</div>
+		{:else}
+			<p class="price">$ {price}</p>
 
-	<div class="overlay">
-		<i class="bi bi-plus" />
-		<i class="bi bi-heart-fill" />
+			<div class="overlay">
+				<i class="bi bi-plus" />
+				<i class="bi bi-heart-fill" />
+			</div>
+		{/if}
 	</div>
 </Card>
 
 <style>
+    .product {
+        height: 365px;
+    }
+
 	img {
 		height: 260px;
 		margin-bottom: 15px;
@@ -53,7 +59,7 @@
 		font-weight: bold;
 	}
 
-	.overlay {        
+	.overlay {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -65,7 +71,6 @@
 		opacity: 0;
 		transition: 0.1s linear;
 		background-color: rgba(53, 202, 126, 0.8);
-
 	}
 
 	.overlay:hover {
@@ -81,7 +86,7 @@
 		border-radius: 50%;
 		background-color: white;
 		margin: 5px;
-        cursor: pointer;
+		cursor: pointer;
 	}
 
 	.overlay .bi-plus {

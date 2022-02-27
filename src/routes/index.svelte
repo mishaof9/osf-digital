@@ -1,13 +1,75 @@
 <script>
 	import Benefits from '$lib/Benefits.svelte';
-	import CardRow from '$lib/CardRow.svelte';
-	import Card from '$lib/Card.svelte';
-	import ProductCard from '$lib/ProductCard.svelte';
-	import DragonsMisbeaving from '$lib/DragonsMisbeaving.svelte';
+	import ProductCard from '$lib/cards/ProductCard.svelte';
+	import DragonsMisbeaving from '$lib/cards/DragonsMisbeaving.svelte';
+	import FeaturedProduct from '$lib/FeaturedProduct.svelte';
+	import PopularItems from '$lib/PopularItems.svelte';
+
+	let popular_items = [
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item1.png',
+			name: 'Kristina Dam Oak Table With White Marble Top',
+			price: '799.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item2.png',
+			name: 'Hay-About A Lounge Chair AAL 93',
+			price: '659.55',
+			discounted: true
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item3.png',
+			name: 'Activate Facial Mask and Charcoal Soap',
+			price: '129.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item4.png',
+			name: 'Cocktail Table Walnut',
+			price: '629.99'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item5.png',
+			name: 'Hay-About A Lounge Chair AAL 93',
+			price: '659.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item6.png',
+			name: 'Tory Desk Calendar',
+			price: '410.99',
+			discounted: true
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item7.png',
+			name: 'CH445 Wing Chair on Suite NY',
+			price: '330.55'
+		},
+		{
+			component: DragonsMisbeaving
+		}
+	];
+	function loadMore() {
+		let product = {
+			component: ProductCard,
+			image: 'static/img/popularitems/item5.png',
+			name: 'Hay-About A Launge Chair AAL 93',
+			price: '695.55'
+		};
+		popular_items.push(product);
+
+		// we need so svelte can tell that we modified the array
+		popular_items = popular_items;
+	}
 </script>
 
 <!--carousel banner-->
-<section class="carousel-container row">
+<section class="carousel-container row d-none d-md-flex">
 	<div
 		id="carouselExampleCaptions"
 		class="carousel slide col-lg-9"
@@ -89,7 +151,7 @@
 		/>
 	</div>
 
-	<div class="sales-container column col-lg-3">
+	<div class="sales-container column col-lg-3 d-none d-lg-block">
 		<img src="static/img/pdp/holidaysattribute.png" alt="holidaysattribute" />
 		<div class="top-center">55%</div>
 		<div class="bottom-center">Summer<br /> Sales</div>
@@ -110,56 +172,22 @@
 <!--popular items starts here -->
 <section class=" popular-items wrapper">
 	<div class="row divider">
-		<div class="hr" />
-		<h4>Popular Items</h4>
-		<div class="hr" />
+		<div class="col">
+			<div class="hr" />
+		</div>
+		<div class="col col-auto">
+			<h4>Popular Items</h4>
+		</div>
+		<div class="col">
+			<div class="hr" />
+		</div>
 	</div>
-	<CardRow>
-		<ProductCard
-			name="Kristina Dam Oak Table With White Marble Top"
-			img="static/img/popularitems/item1.png"
-			price="799.55"
-		/>
-		<ProductCard
-			name="Hay-About A Lounge Chair AAL 93"
-			img="static/img/popularitems/item2.png"
-			price="659.55"
-			discounted={true}
-		/>
-		<ProductCard
-			name="Activate Facial Mask and Charcoal Soap"
-			img="static/img/popularitems/item3.png"
-			price="129.55"
-		/>
-		<ProductCard
-			name="Cocktail Table Walnut"
-			img="static/img/popularitems/item4.png"
-			price="299.99"
-		/>
-	</CardRow>
-	<CardRow>
-		<ProductCard
-			name="Hay-About A Lounge Chair AAL 93"
-			img="static/img/popularitems/item5.png"
-			price="659.55"
-		/>
-		<ProductCard
-			name="Tory Desk Calendar"
-			img="static/img/popularitems/item6.png"
-			price="410.99"
-			discounted={true}
-		/>
-		<ProductCard
-			name="CH445 Wing Chair on Suite NY"
-			img="static/img/popularitems/item7.png"
-			price="330.55"
-		/>
-		<DragonsMisbeaving />
-	</CardRow>
 
-	<div class="row">
-		<button class="button">Load more</button>
-	</div>
+	<PopularItems items={popular_items} />
+
+    <div class="text-center">
+        <button class="button" on:click={loadMore}>Load more</button>
+    </div>
 </section>
 
 <!--banner osf starts here-->
@@ -173,52 +201,7 @@
 	</div>
 </div>
 
-<!--featured product starts here-->
-<section class="featured-product wrapper">
-	<div class="row">
-		<h3>Featured Product</h3>
-		<h6>Unde omnis iste natus error sit voluptatem</h6>
-	</div>
-	<!--create div for hr, ///, hr-->
-	<div class="row slider">
-		<a href="#" class="previous round">&#8249;</a>
-		<div class="hr" />
-		///
-		<div class="hr" />
-		<a href="#" class="next round">&#8250;</a>
-	</div>
-
-	<CardRow>
-		<Card height="295">
-			<div class="featured">
-				<img src="static/img/cards/calendar.png" />
-				<p>Kristina Dam Oak Table With White Marble</p>
-				<h5>Awesome</h5>
-			</div>
-		</Card>
-		<Card height="295">
-			<div class="featured">
-				<img src="static/img/cards/gracioushome.png" />
-				<p class="card-text">Kristina Dam Oak Table With White Marble</p>
-				<h5>Marketing</h5>
-			</div>
-		</Card>
-		<Card height="295">
-			<div class="featured">
-				<img src="static/img/cards/pen.png" />
-				<p>Kristina Dam Oak Table With White Marble</p>
-				<h5>Awesome</h5>
-			</div>
-		</Card>
-		<Card height="295">
-			<div class="featured">
-				<img src="static/img/cards/salesforce.png" />
-				<p>Kristina Dam Oak Table With White Marble</p>
-				<h5>Marketing</h5>
-			</div>
-		</Card>
-	</CardRow>
-</section>
+<FeaturedProduct />
 
 <Benefits />
 
@@ -239,67 +222,7 @@
 		width: 100%;
 		color: #ffffff;
 	}
-	/*featured product */
-	.featured-product {
-		background-color: #262a32;
-		max-width: 100%;
-		height: 550px;
-	}
 
-	.featured-product h3 {
-		color: #ffffff;
-		text-align: center;
-		margin-top: 30px;
-	}
-	.featured-product h6 {
-		color: #ffffff;
-		text-align: center;
-	}
-	.hr {
-		display: inline-block;
-		border-top: 1px solid #ffffff;
-		width: 235px;
-		margin: 17px;
-	}
-	.slider {
-		justify-content: center;
-		margin-left: -9px;
-		color: #ffffff;
-	}
-	.slider a {
-		text-decoration: none;
-		display: inline-block;
-	}
-	.previous {
-		width: 30px;
-		height: 30px;
-		color: rgb(253, 253, 253);
-		background-color: #2d343a;
-		margin-top: -5px;
-	}
-
-	.next {
-		width: 30px;
-		height: 30px;
-		color: rgb(255, 255, 255);
-		background-color: #2d343a;
-		margin-top: -5px;
-	}
-
-	.round {
-		border-radius: 10%;
-	}
-
-	.featured p {
-		text-align: center;
-		font-size: 20px;
-	}
-	.featured h5 {
-		color: #84bc22;
-		text-align: center;
-		font-family: Lato ExtraBold, sans-serif;
-		font-size: 18px;
-	}
 	/*popular items*/
 
 	.popular-items {
@@ -319,8 +242,6 @@
 
 	.popular-items .button {
 		margin-top: 50px;
-		margin-left: 500px;
-		margin-right: 500px;
 		margin-bottom: 45px;
 		background-color: #262a32;
 		color: #ffffff;
@@ -336,12 +257,12 @@
 
 	.popular-items .hr {
 		border-top: 2px solid #3c4047;
-		width: 400px;
+		margin-top: 15px;
 	}
+
 	.divider {
-		padding: 60px 53px 50px 53px;
-		align-self: center;
-		margin-left: 25px;
+		margin: 0 2.5%;
+		padding-top: 40px;
 	}
 	/*carousel-banner*/
 
@@ -401,14 +322,14 @@
 	.carousel-container {
 		position: relative;
 		padding: 26px 56px;
-        background-color: #ffffff;
+		background-color: #ffffff;
 	}
 
-    .carousel-indicators button {
-        border-radius: 50%;
-        width: 5px;
-        height: 5px;
-    }
+	.carousel-indicators button {
+		border-radius: 50%;
+		width: 5px;
+		height: 5px;
+	}
 
 	.top-left {
 		position: absolute;
@@ -429,7 +350,7 @@
 		text-transform: uppercase;
 		display: inline-block;
 		position: absolute;
-        font-family: Lato Regular;
+		font-family: Lato Regular;
 		font-size: 15px;
 		cursor: pointer;
 		border-radius: 16px;

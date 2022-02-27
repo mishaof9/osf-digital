@@ -1,6 +1,6 @@
 <div class="wrapper home-404">
 	<ul>
-		<li class="li-home"><a href="index.svelte">Home</a></li>
+		<li class="li-home"><a href="/">Home</a></li>
 		<li class="li-empty">/</li>
 		<li class="li-404">404</li>
 	</ul>

@@ -1,56 +1,183 @@
 <script>
 	import Benefits from '$lib/Benefits.svelte';
-	import CardRow from '$lib/CardRow.svelte';
-	import ProductCard from '$lib/ProductCard.svelte';
+	import CardContainer from '$lib/cards/CardContainer.svelte';
+	import ProductCard from '$lib/cards/ProductCard.svelte';
+	import Breadcrumbs from '$lib/nav/Breadcrumbs.svelte';
+	import Breadcrumb from '$lib/nav/Breadcrumb.svelte';
+	import ProductImage from '$lib/modals/ProductImage.svelte';
+	import Social from '$lib/Social.svelte';
+	import PopularItems from '$lib/PopularItems.svelte';
+import DragonsMisbeaving from '$lib/cards/DragonsMisbeaving.svelte';
+
+	function chunk(arr, len) {
+		var chunks = [],
+			i = 0,
+			n = arr.length;
+		while (i < n) {
+			chunks.push(arr.slice(i, (i += len)));
+		}
+		return chunks;
+	}
+
+	let show_preview = false;
+
+	let images = [
+		{
+			full: '/static/img/pdp/pg1.jpg',
+			thumb: '/static/img/pdp/pg1small.jpg',
+			title: 'Front Black'
+		},
+		{ full: '/static/img/pdp/pg2.jpg', thumb: '/static/img/pdp/pg2small.jpg', title: 'Back Black' },
+		{ full: '/static/img/pdp/pg3.jpg', thumb: '/static/img/pdp/pg3small.jpg', title: 'Back Azul' },
+		{ full: '/static/img/pdp/pg4.jpg', thumb: '/static/img/pdp/pg4small.jpg', title: 'Front Azul' }
+	];
+	let selected_image = images[0];
+
+	let colors = [
+		{ name: 'Dark Gray', color: '#585d61' },
+		{ name: 'Azul', color: '#96ccbe' }
+	];
+	let selected_color = colors[0];
+
+	let qty = 1;
+	$: if (qty < 1) qty = 1;
+
+	let read_more = false;
+
+	let popular_items = [
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/back1.png',
+			name: 'Kristina Dam Oak Table With White Marble Top',
+			price: '799.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/back2.png',
+			name: 'Kristina Dam Oak Table With White Marble Top',
+			price: '2195.00'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/back3.png',
+			name: 'Activate Facial Mask and Charcoal Soap',
+			price: '129.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/back4.png',
+			name: 'Cocktail Table Walnut|YES',
+			price: '629.99'
+		}
+	];
 </script>
 
-<!--product detailed page-->
-<section class="product-page">
-	<div class="wrapper home-product">
-		<ul>
-			<li class="li-hm"><a href="/">Home</a></li>
-			<li class="li-slash">/</li>
-			<li class="li-osf-theme"><a href="/">OSF Theme</a></li>
-			<li class="li-slash">/</li>
-			<li class="li-description">Ruffle Front V-Neck Cardigan</li>
-		</ul>
-		<h2>Ruffle Front V-Neck Cardigan</h2>
-	</div>
-	<div class=" row main-product">
-		<div class=" pictures column col-4">
-			<img src="static/img/pdp/pg1.jpg" alt="first picture" class="main-picture" />
-		</div>
-		<div class="small-pictures column col-4">
-			<img src="static/img/pdp/pg1small.jpg" alt="first picture2" />
-			<img src="static/img/pdp/pg2small.jpg" alt="second picture" />
-			<img src="static/img/pdp/pg3small.jpg" alt="third picture" />
-			<img src="static/img/pdp/pg4small.jpg" alt="fourth picture" />
+<Breadcrumbs>
+	<Breadcrumb href="/" name="OSF Theme" />
+	<Breadcrumb name="Ruffle Front V-Neck Cardigan" />
+</Breadcrumbs>
+
+<h2 class="page-name"><span class="d-none d-sm-inline">Ruffle Front </span>V-Neck Cardigan</h2>
+
+<div class="container-fuild px-4">
+	<div class="row">
+		<!-- main image + thumbnails -->
+		<div class="col col-12 col-md-6 col-lg-auto">
+			<div class="row">
+				<!-- main image -->
+				<div class="col col-12 col-lg-8">
+					<div class="main-image mx-auto">
+						<img src={selected_image.full} class="img-fluid" alt="product" />
+						<i class="bi bi-arrows-fullscreen" on:click={() => (show_preview = true)} />
+					</div>
+				</div>
+
+				<!-- thumbnails -->
+				<div class="col col-12 col-lg-auto">
+					<!-- on non extra-small screens, we display aligned vertically -->
+					<div class="row d-none d-lg-block mx-auto">
+						{#each images as image}
+							<div class="col col-auto">
+								<img
+									src={image.thumb}
+									alt={image.title}
+									title={image.title}
+									class="thumb"
+									class:active={selected_image == image}
+									on:click={() => (selected_image = image)}
+								/>
+							</div>
+						{/each}
+					</div>
+
+					<!-- on smaller screens, we use a carousel with 3 images per slide -->
+					<div id="thumb-carousel" class="carousel slide d-lg-none" data-bs-ride="">
+						<div class="carousel-inner">
+							<!-- split thumbnail list into chunks of 3 -->
+							{#each chunk(images, 3) as images, i}
+								<div class="carousel-item" class:active={i == 0}>
+									<div class="row justify-content-center g-0">
+										{#each images as image}
+											<div class="col col-auto">
+												<img
+													src={image.thumb}
+													alt={image.title}
+													title={image.title}
+													class="thumb"
+													class:active={selected_image == image}
+													on:click={() => (selected_image = image)}
+												/>
+											</div>
+										{/each}
+									</div>
+								</div>
+							{/each}
+						</div>
+						<div class="carousel-indicators">
+							{#each Array(Math.ceil(images.length / 3)) as _, i}
+								<button
+									type="button"
+									data-bs-target="#thumb-carousel"
+									data-bs-slide-to={i}
+									class:active={i == 0}
+									aria-current={i == 0}
+									aria-label="Page {i + 1}"
+								/>
+							{/each}
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
-		<div class="about column  col-4">
-			<span class="price">$299.99</span>
+		<!-- info -->
+		<div class="col">
+			<span class="first-price">$299.99</span>
 			<div class="colorlist">
-				<span class="dot" />
+				<span class="dot" style:background-color={selected_color.color} />
 
-				<select name="colorlist">
-					<option value="Dark Gray">Dark Gray</option>
-					<option value="Aqua">Aqua</option>
+				<select bind:value={selected_color}>
+					{#each colors as color}
+						<option value={color}>{color.name}</option>
+					{/each}
 				</select>
 			</div>
-			<div class="add row">
-				<div class="amount column col-6">
-					<button class="minus">-</button>
-					<input type="number" name="amount" />
-					<button class="plus">+</button>
+			<div class="add ">
+				<div class="amount">
+					<button on:click={() => qty--}>-</button>
+					<input type="number" name="amount" bind:value={qty} min="1" />
+					<button on:click={() => qty++}>+</button>
 				</div>
-				<button class="cart-btn column col-6">Add to cart</button>
+				<button class="cart-btn">Add to cart</button>
 			</div>
 			<p>
 				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
 				laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore Beatae vitae dicta sunt
 				explicabo. <br />
-				Nemo enim ipsam voluptatem <span id="dots" /><span id="more"
-					>quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
+				Nemo enim ipsam voluptatem
+				<span id="dots" />
+				<span class:d-none={!read_more}>
+					quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
 					qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
 					dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
 					incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam,
@@ -60,170 +187,213 @@
 					pariatur?
 				</span>
 			</p>
-			<button onclick="myFunction()" id="myBtn"> Read more</button>
+			<button class="read-more" on:click={() => (read_more = !read_more)}>
+				Read {read_more ? 'Less' : 'More'}
+			</button>
 
-			<div class="share column">
-				<span>Share</span>
-				<ul>
-					<a href="https://www.facebook.com/OSFGlobalServices/" target="_blank">
-						<i class="bi bi-facebook" />
-					</a>
-					<a href="https://www.google.com" target="_blank">
-						<i class="bi bi-google" />
-					</a>
-					<a href="https://twitter.com/osfglobal" target="_blank">
-						<i class="bi bi-twitter" />
-					</a>
-					<a href="https://www.pinterest.ca/osfglobal/" target="_blank">
-						<i class="bi bi-pinterest" />
-					</a>
-				</ul>
+			<div class="share">
+				Share
+				<Social />
 			</div>
 		</div>
 	</div>
+</div>
+<div class="infos  d-none d-lg-block ">
+	<ul class="nav row justify-content-center" id="myTab" role="tablist">
+		<li class="col col-auto nav-item " role="presentation">
+			<button
+				class="nav-link active"
+				id="home-tab"
+				data-bs-toggle="tab"
+				data-bs-target="#home"
+				type="button"
+				role="tab"
+				aria-controls="home"
+				aria-selected="true">Description</button
+			>
+		</li>
+		<li class="col col-auto nav-item" role="presentation">
+			<button
+				class="nav-link"
+				id="profile-tab"
+				data-bs-toggle="tab"
+				data-bs-target="#profile"
+				type="button"
+				role="tab"
+				aria-controls="profile"
+				aria-selected="false">Additional Information</button
+			>
+		</li>
+		<li class="col col-auto nav-item" role="presentation">
+			<button
+				class="nav-link"
+				id="contact-tab"
+				data-bs-toggle="tab"
+				data-bs-target="#contact"
+				type="button"
+				role="tab"
+				aria-controls="contact"
+				aria-selected="false">Reviews (3)</button
+			>
+		</li>
+	</ul>
+</div>
 
-	<div class="tabs-info">
-		<ul>
-			<li class="active">Description</li>
-			<li>Additional information</li>
-			<li>Reviews (3)</li>
-		</ul>
-		<div class="tab-container">
-			<div class="tab active row">
-				<div class="column col-md-6 col1">
-					<p>
-						Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-						dis parturient montes, nascetur ridiculus mus.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-						dolor. Aenean massa.
-					</p>
-				</div>
-				<div class="column col-md-6">
-					<p>
-						Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-						Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat
-						massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-					</p>
-				</div>
+<div class="tab-content d-none d-lg-block" id="myTabContent">
+	<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+		<div class="tab active row">
+			<div class="column col-md-6 col1">
+				<p>
+					Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+					parturient montes, nascetur ridiculus mus.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+					dolor. Aenean massa.
+				</p>
+			</div>
+			<div class="column col-md-6">
+				<p>
+					Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+					Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+					quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+				</p>
 			</div>
 		</div>
 	</div>
-</section>
-
+	<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+		<div class="tab active row">
+			<div class="column col-md-6 col1">
+				<p>
+					Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+					parturient montes, nascetur ridiculus mus.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+					dolor. Aenean massa.
+				</p>
+			</div>
+			<div class="column col-md-6">
+				<p>
+					Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+					Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+					quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+		<div class="tab active row">
+			<div class="column col-md-6 col1">
+				<p>
+					Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+					parturient montes, nascetur ridiculus mus.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+					dolor. Aenean massa.
+				</p>
+			</div>
+			<div class="column col-md-6">
+				<p>
+					Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+					Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+					quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
 <!--popular items starts here -->
 <section class=" popular-items wrapper">
 	<div class="row divider">
-		<div class="hr" />
-		<h4>Popular Items</h4>
-		<div class="hr" />
+		<div class="col">
+			<div class="hr" />
+		</div>
+		<div class="col col-auto">
+			<h4>Popular Items</h4>
+		</div>
+		<div class="col">
+			<div class="hr" />
+		</div>
 	</div>
-	<CardRow>
-		<ProductCard
-			name="Kristina Dam Oak Table With White Marble Top"
-			img="static/img/popularitems/back1.png"
-			price="799.55"
-		/>
-		<ProductCard
-			name="Kristina Dam Oak Table With White Marble Top"
-			img="static/img/popularitems/back2.png"
-			price="2195.00"
-		/>
-		<ProductCard
-			name="Activate Facial Mask and Charcoal Soap"
-			img="static/img/popularitems/back3.png"
-			price="129.55"
-		/>
-		<ProductCard
-			name="Cocktail Table Walnut|YES  "
-			img="static/img/popularitems/back4.png"
-			price="629.99"
-		/>
-	</CardRow>
+
+	<PopularItems items={popular_items} />
+
+	<div class="scroll  d-sm-block d-md-none ">
+		<button>Scroll to top</button>
+	</div>
 </section>
 
 <Benefits />
 
 <style>
-	/*product page*/
-
-	.card2 {
-		margin-top: -115px;
-	}
-	.product-page {
-		margin-top: 30px;
-		margin-bottom: 100px;
-		padding-bottom: 70px;
-	}
-
-	.home-product h2 {
-		font-weight: bold;
-		font-size: 44px;
-		padding-left: 50px;
-		padding-top: 20px;
+	.page-name {
+		width: 100%;
 		text-align: center;
 	}
-	.home-product ul {
-		display: flex;
-		list-style: none;
-		justify-content: center;
-	}
-	.li-hm a {
-		text-decoration: none;
-		font-size: 17px;
-		color: #84bc22;
-		font-weight: bold;
-	}
-	.li-osf-theme a {
-		text-decoration: none;
-		font-size: 17px;
-		color: #84bc22;
-		font-weight: bold;
-	}
-	.li-slash {
-		padding-left: 5px;
-		padding-right: 5px;
-	}
-	.main-product {
-		margin-top: 40px;
+
+	.container-fuild {
 		background-color: #ffffff;
 	}
-	.main-picture {
-		margin-right: 45px;
-		height: 450px;
+
+	.main-image {
+		position: relative;
+		width: fit-content;
 	}
-	.pictures {
-		width: 30%;
-		margin-right: 70px;
-		margin-left: 10px;
-		margin-top: 20px;
+
+	.main-image i {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		color: #84bc22;
+		cursor: pointer;
 	}
-	.small-pictures {
-		width: 90px;
-		margin-top: 20px;
-		margin-left: 20px;
-		padding: 0;
+
+	.thumb {
+		margin: 8px;
+		border: 1px solid gray;
+		border-radius: 2px;
+		width: 72px;
+		opacity: 0.5;
 	}
-	.about {
-		margin-left: 150px;
-		margin-top: 20px;
+
+	.thumb.active {
+		border-color: #84bc22;
+		opacity: 1;
 	}
-	.about .price {
+
+	.carousel-indicators {
+		position: static;
+	}
+	.carousel-indicators button {
+		border: 2px solid transparent;
+		background-color: darkgray;
+		border-radius: 50%;
+		width: 10px;
+		height: 10px;
+	}
+
+	.carousel-indicators button.active {
+		border-color: black;
+		background-color: white;
+	}
+    
+	.first-price {
 		font-size: 44px;
 		font-weight: bold;
 		color: #262a32;
 		background-color: inherit;
 	}
-	.about .colorlist {
+	.colorlist {
 		border: 1px solid #7d7a77;
 		width: fit-content;
 		border-radius: 20px;
 		padding: 2px 2px;
 		background-color: white;
+		overflow: hidden;
 	}
 	.dot {
-		background-color: #2d343a;
 		border-radius: 50%;
 		height: 15px;
 		width: 15px;
@@ -231,29 +401,27 @@
 		margin-left: 5px;
 		margin-top: 5px;
 	}
-	.about select {
+	.colorlist select {
 		border: none;
-		background-color: #ffffff;
-		width: 165px;
+		background-color: inherit;
 	}
 	.amount {
 		background-color: #ffffff;
 		color: #262a32;
-		margin: 10px 10px;
+		margin: 10px 0px;
 		cursor: pointer;
 		width: fit-content;
 		border-radius: 25px;
-		padding-top: 5px;
+		padding: 5px 5px;
 		border: 1px solid #7d7a77;
+		overflow: hidden;
 	}
 	.amount input {
 		border: none;
 		color: #262a32;
 		cursor: pointer;
-		width: 50px;
 		background-color: #ffffff;
 	}
-
 	.amount input::-webkit-outer-spin-button, /*hide the tml nr input */
 .amount input::-webkit-inner-spin-button {
 		-webkit-appearance: none;
@@ -264,35 +432,14 @@
 		-moz-appearance: textfield; /* Firefox */
 	}
 
-	.amount .minus {
+	.amount button {
 		border: none;
 		background-color: #ffffff;
 	}
-	.amount .plus {
-		border: none;
-		background-color: #ffffff;
-	}
-	.share span {
-		float: left;
-		margin-right: 30px;
-		color: #7d7a77;
-	}
-	.share a {
-		padding-right: 30px;
-		text-decoration: none;
-	}
-	.share ul {
-		list-style: none;
-	}
-	.share ul a i {
-		color: #7d7a77;
-	}
-	.about p {
-		font-size: 16px;
-	}
+
 	.cart-btn {
 		color: #ffffff;
-		margin: 10px 10px;
+
 		cursor: pointer;
 		border-radius: 25px;
 		background-color: #84bc22;
@@ -303,86 +450,50 @@
 		text-transform: uppercase;
 		width: fit-content;
 	}
-	#myBtn {
+	p {
+		font-size: 16px;
+		font-family: Lato, sans-serif;
+	}
+
+	.read-more {
 		border: none;
 		background-color: inherit;
 		padding-top: 10px;
 		padding-bottom: 30px;
 		color: #84bc22;
-		margin-right: 250px;
+
 		font-size: 18px;
 	}
-
-	/*product page tab info */
-	.tabs-info {
-		margin-top: 80px;
+	/* nu-tabs */
+	.infos {
+		background-color: #ffffff;
 	}
-	.tabs-info ul {
-		display: flex;
-		list-style: none;
-		justify-content: center;
-		margin-bottom: 0px;
-	}
-	.tabs-info > ul {
-		text-align: center;
-	}
-	.tabs-info > ul li {
-		display: inline-block;
-		margin: 0px 16px;
-		padding: 24px 48px;
-		font-size: 24px;
+	#myTab button {
+		border: none;
 		border-radius: 32px 32px 0px 0px;
-		color: #bdc3c7;
-		background-color: inherit;
+		background-color: #ffffff;
+		text-decoration: none;
+		color: #262a32;
+		font-size: 24px;
 		cursor: pointer;
 		transition: all 0.2s ease;
+		padding: 24px 48px;
 	}
-	.tabs-info > ul li:hover {
+	#myTab button:hover,
+	#myTab button.active {
+		background-color: #262a32;
+		color: #ffffff;
+	}
+	#myTabContent {
 		color: #ffffff;
 		background-color: #262a32;
-	}
-	.tabs-info > ul li.active {
-		color: #ffffff;
-		background-color: #262a32;
-	}
-	.tabs-info .tab-container .tab {
-		display: flex;
-
-		flex-wrap: wrap;
-		align-items: flex-start;
-		color: #ffffff;
-		background-color: #262a32;
-		padding-top: 70px;
-		padding-bottom: 30px;
-		overflow: hidden;
-		position: absolute;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		opacity: 0;
-		visibility: hidden;
-		transition: all 0.6s ease;
-	}
-	.tabs-info .tab-container .column p {
-		color: #ffffff;
-		margin-bottom: 30px;
-
 		font-size: 18px;
 		line-height: 1.5;
-	}
-	.tabs-info .tab-container .col1 {
-		float: left;
-	}
-	.tabs-info .tab-container .tab.active {
-		visibility: visible;
-		opacity: 1;
-		float: left;
-		position: relative;
+		padding: 60px 50px;
+		margin-bottom: 40px;
 	}
 	/*popular items */
 	.popular-items {
-	
 		max-width: 100%;
 
 		padding-bottom: 50px;
@@ -396,79 +507,36 @@
 		width: fit-content;
 		margin-top: -18px;
 	}
-	.popular-items .card-text {
-		text-align: center;
-		font-size: 15px;
-		color: black;
-		padding-top: 130px;
-	}
-	.popular-items .last-text {
-		margin-top: -200px;
-		color: #ffffff;
-	}
-	.popular-items .my-card {
-		border-radius: 5px;
-		overflow: hidden;
-		background: white;
-		width: 240px;
-		height: 340px;
-		margin-top: 40px;
-		margin-left: 35px;
-		margin-right: 12px;
-		align-self: center;
-	}
-	.popular-items .column {
-		margin-right: -85px;
-		margin-left: 50px;
-	}
 
-	.popular-items .button {
-		margin-top: 50px;
-		margin-left: 500px;
-		margin-right: 500px;
-		margin-bottom: 45px;
-		background-color: #262a32;
-		color: #ffffff;
-		padding: 10px 20px;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		cursor: pointer;
-		border-radius: 16px;
-		width: 250px;
-		font-size: 18px;
-	}
-
-	.popular-items .btn-group {
-		padding-left: 25px;
-		padding-right: 0px;
-		padding-bottom: 25px;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		margin: -25px 2px;
-		cursor: pointer;
-		border-radius: 16px;
-		font-size: 14px;
-	}
 	.price {
 		color: #84bc22;
-		background-color: #ffffff;
-		border-radius: 16px;
-	}
-	.text-btn {
-		color: black;
 		background-color: #ffffff;
 		border-radius: 16px;
 	}
 
 	.popular-items .hr {
 		border-top: 2px solid #3c4047;
-		width: 400px;
 	}
 	.divider {
-		padding: 60px 53px 50px 53px;
-		align-self: center;
-		margin-left: 60px;
+		margin: 0 2.5%;
+		padding-top: 40px;
+	}
+	.scroll button {
+		color: #ffffff;
+		background-color: #84bc22;
+		cursor: pointer;
+		border-radius: 25px;
+		border: 1px solid #84bc22;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 20px;
+		padding-right: 20px;
+		text-transform: uppercase;
+	}
+	.scroll {
+		width: fit-content;
+		margin-left: 36%;
+		margin-right: 37%;
+		margin-top: 8%;
 	}
 </style>

@@ -1,8 +1,5 @@
 <script>
-	export let show;
-	function handleKeydown(event) {
-		if (event.key == 'Escape') show = false;
-	}
+	import Modal from "$lib/modals/Modal.svelte";
 
 	let showPassword=false;
 	function toggle() {
@@ -10,11 +7,8 @@
 	}
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
 
-
-
-<div class="loginForm" class:hidden={!show} on:click|self={() => (show = false)}>
+<Modal on:close>
 	<form>
 		<h3>Sign in</h3>
 
@@ -35,21 +29,10 @@
 		<input type="submit" value="Login" class="login" />
 		<a href="#" class="register">I don't have an account</a>
 	</form>
-</div>
+
+</Modal>
 
 <style>
-	.hidden {
-		display: none;
-	}
-	.loginForm {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		background-color: rgba(100, 100, 100, 0.5);
-		z-index: 1;
-	}
 	form {
 		position: absolute;
 		width: 429px;
