@@ -1,22 +1,22 @@
 [
     {
-        "image": "/static/img/popularitems/item4.png",
+        "image": "/img/popularitems/item4.png",
         "name": "Cocktail Table Walnut",
         "price": "629.99"
     },
     {
-        "image": "/static/img/popularitems/item5.png",
+        "image": "/img/popularitems/item5.png",
         "name": "Hay-About A Lounge Chair AAL 93",
         "price": "659.55"
     },
     {
-        "image": "/static/img/popularitems/item6.png",
+        "image": "/img/popularitems/item6.png",
         "name": "Tory Desk Calendar",
         "price": "410.99",
         "discounted": true
     },
     {
-        "image": "/static/img/popularitems/item7.png",
+        "image": "/img/popularitems/item7.png",
         "name": "CH445 Wing Chair on Suite NY",
         "price": "330.55"
     }

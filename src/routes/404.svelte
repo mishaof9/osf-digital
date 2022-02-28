@@ -45,7 +45,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: url(static/img/404/oops.png) -100px no-repeat;
+		background: url(static//img/404/oops.png) -100px no-repeat;
 	}
 
 	.oops h1 {

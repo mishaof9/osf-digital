@@ -36,7 +36,7 @@
 					<div class="col">
 						<Card>
 							<div class="featured">
-								<img src="/static/img/cards/calendar.png" />
+								<img src="/img/cards/calendar.png" />
 								<p>Kristina Dam Oak Table With White Marble</p>
 								<h5>Awesome</h5>
 							</div>
@@ -45,7 +45,7 @@
 					<div class="col">
 						<Card>
 							<div class="featured">
-								<img src="/static/img/cards/gracioushome.png" />
+								<img src="/img/cards/gracioushome.png" />
 								<p class="card-text">Kristina Dam Oak Table With White Marble</p>
 								<h5>Marketing</h5>
 							</div>
@@ -54,7 +54,7 @@
 					<div class="col">
 						<Card>
 							<div class="featured">
-								<img src="/static/img/cards/pen.png" />
+								<img src="/img/cards/pen.png" />
 								<p>Kristina Dam Oak Table With White Marble</p>
 								<h5>Awesome</h5>
 							</div>
@@ -63,7 +63,7 @@
 					<div class="col">
 						<Card>
 							<div class="featured">
-								<img src="/static/img/cards/salesforce.png" />
+								<img src="/img/cards/salesforce.png" />
 								<p>Kristina Dam Oak Table With White Marble</p>
 								<h5>Marketing</h5>
 							</div>
@@ -76,7 +76,7 @@
 					<div class="col">
 						<Card>
 							<div class="featured">
-								<img src="/static/img/cards/salesforce.png" alt="salesforce" />
+								<img src="/img/cards/salesforce.png" alt="salesforce" />
 								<p>Kristina Dam Oak Table With White Marble</p>
 								<h5>Awesome</h5>
 							</div>
@@ -85,7 +85,7 @@
 					<div class="col">
 						<Card>
 							<div class="featured">
-								<img src="/static/img/cards/pen.png" alt="pen" />
+								<img src="/img/cards/pen.png" alt="pen" />
 								<p class="card-text">Kristina Dam Oak Table With White Marble</p>
 								<h5>Marketing</h5>
 							</div>
@@ -94,7 +94,7 @@
 					<div class="col">
 						<Card>
 							<div class="featured">
-								<img src="/static/img/cards/gracioushome.png" alt="gracioushome" />
+								<img src="/img/cards/gracioushome.png" alt="gracioushome" />
 								<p>Kristina Dam Oak Table With White Marble</p>
 								<h5>Awesome</h5>
 							</div>
@@ -103,7 +103,7 @@
 					<div class="col">
 						<Card>
 							<div class="featured">
-								<img src="/static/img/cards/calendar.png" alt="calendar" />
+								<img src="/img/cards/calendar.png" alt="calendar" />
 								<p>Kristina Dam Oak Table With White Marble</p>
 								<h5>Marketing</h5>
 							</div>

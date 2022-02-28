@@ -4,7 +4,7 @@
 		<div class="col">
 			<div class="row align-items-center">
 				<div class="col col-auto">
-					<img src="/static/img/benefits/focus.png" alt="focus" />
+					<img src="/img/benefits/focus.png" alt="focus" />
 				</div>
 				<div class="col info">
 					<h4>Focus</h4>
@@ -19,7 +19,7 @@
 		<div class="col">
 			<div class="row align-items-center">
 				<div class="col col-auto order-last order-lg-first">
-					<img src="/static/img/benefits/method.png" alt="method" />
+					<img src="/img/benefits/method.png" alt="method" />
 				</div>
 				<div class="col info">
 					<h4>Method</h4>
@@ -34,7 +34,7 @@
 		<div class="col">
 			<div class="row align-items-center">
 				<div class="col col-auto">
-					<img src="/static/img/benefits/knowledge.png" alt="knowledge" />
+					<img src="/img/benefits/knowledge.png" alt="knowledge" />
 				</div>
 				<div class="col info">
 					<h4>Knowledge</h4>

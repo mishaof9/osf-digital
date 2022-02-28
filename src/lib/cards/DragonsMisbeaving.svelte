@@ -3,7 +3,7 @@
 </script>
 
 <Card>
-	<img src="/static/img/popularitems/item13.jpg" />
+	<img src="/img/popularitems/item13.jpg" />
 	<div>
 		<p>My dragons are misbehaving again.</p>
         <p>Unbelieveable!</p>

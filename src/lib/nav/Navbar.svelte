@@ -31,12 +31,12 @@
 	</button>
 
 	<a class="navbar-brand" href="/">
-		<img class="osf-logo-small d-lg-none" src="/static/img/logo/logoosf.png" alt="logo" />
+		<img class="osf-logo-small d-lg-none" src="/img/logo/logoosf.png" alt="logo" />
 
 		<div class="osf-logo d-none d-lg-block">
 			<div class="row g-1">
 				<div class="col">
-					<img src="/static/img/logo/logoosf.png" alt="logo" />
+					<img src="/img/logo/logoosf.png" alt="logo" />
 				</div>
 				<div class="col">
 					<div class="text-center">
@@ -151,7 +151,7 @@
 				</div>
 			</li>
 
-			<img src="/static/img/popularitems/menu.jpg" alt="menu" />
+			<img src="/img/popularitems/menu.jpg" alt="menu" />
 		</div>
 
 		<!-- navs for bigger screens -->
@@ -220,7 +220,7 @@
 							<div class="col col-auto">
 								<div class="h-100 d-flex justify-content-center">
 									<img
-										src="/static/img/popularitems/menu.jpg"
+										src="/img/popularitems/menu.jpg"
 										alt="menu"
 										class="img-fluid my-auto"
 									/>

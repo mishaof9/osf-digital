@@ -8,99 +8,99 @@ import Breadcrumbs from '$lib/nav/Breadcrumbs.svelte';
 	let products = [
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item3.png',
+			image: '/img/popularitems/item3.png',
 			name: 'Kristina Dam Oak Table With White Marble Top',
 			price: '799.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item1.png',
+			image: '/img/popularitems/item1.png',
 			name: 'EAMES x Cast + Crew - Custom Powder Coated ',
 			price: '799.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item2.png',
+			image: '/img/popularitems/item2.png',
 			name: 'Activate Facial Mask and Charcoal Soap',
 			price: '129.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item12.png',
+			image: '/img/popularitems/item12.png',
 			name: 'Vitra Cork Stool B, Cork - Design Within Reach',
 			price: '299.99'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item6.png',
+			image: '/img/popularitems/item6.png',
 			name: 'Hay-About A Lounge Chair AAL 93',
 			price: '659.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item5.png',
+			image: '/img/popularitems/item5.png',
 			name: 'TORY DESK CALENDAR',
 			price: '410.99'
 		},
 
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/notfound.png',
+			image: '/img/popularitems/notfound.png',
 			name: 'CH445 Wing Chair on  SUITE NY',
 			price: '330.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/notfound.png',
+			image: '/img/popularitems/notfound.png',
 			name: 'CH445 Wing Chair on  SUITE NY',
 			price: '330.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/notfound.png',
+			image: '/img/popularitems/notfound.png',
 			name: 'Kristina Dam Oak Table With White Marble Top',
 			price: '2195.00'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/notfound.png',
+			image: '/img/popularitems/notfound.png',
 			name: 'MONOQI | Ø55 Crossit  Table - Wht/Grn',
 			price: '299.99'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item6.png',
+			image: '/img/popularitems/item6.png',
 			name: 'Vitra Cork Stool B, Cork - Design Within Reach',
 			price: '870.95'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/notfound.png',
+			image: '/img/popularitems/notfound.png',
 			name: 'Activate Facial Mask and Charcoal Soap ',
 			price: '199.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/notfound.png',
+			image: '/img/popularitems/notfound.png',
 			name: 'Hay-About A Lounge Chair AAL 93',
 			price: '659.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item7.png',
+			image: '/img/popularitems/item7.png',
 			name: 'TORY DESK CALENDAR',
 			price: '410.99'
 		},
 
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/menu.jpg',
+			image: '/img/popularitems/menu.jpg',
 			name: 'EAMES x Cast + Crew - Custom Powder Coated ',
 			price: '330.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/notfound.png',
+			image: '/img/popularitems/notfound.png',
 			name: 'CH445 Wing Chair on  SUITE NY',
 			price: '330.55'
 		}

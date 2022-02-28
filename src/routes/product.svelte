@@ -20,13 +20,13 @@
 
 	let images = [
 		{
-			full: '/static/img/pdp/pg1.jpg',
-			thumb: '/static/img/pdp/pg1small.jpg',
+			full: '/img/pdp/pg1.jpg',
+			thumb: '/img/pdp/pg1small.jpg',
 			title: 'Front Black'
 		},
-		{ full: '/static/img/pdp/pg2.jpg', thumb: '/static/img/pdp/pg2small.jpg', title: 'Back Black' },
-		{ full: '/static/img/pdp/pg3.jpg', thumb: '/static/img/pdp/pg3small.jpg', title: 'Back Azul' },
-		{ full: '/static/img/pdp/pg4.jpg', thumb: '/static/img/pdp/pg4small.jpg', title: 'Front Azul' }
+		{ full: '/img/pdp/pg2.jpg', thumb: '/img/pdp/pg2small.jpg', title: 'Back Black' },
+		{ full: '/img/pdp/pg3.jpg', thumb: '/img/pdp/pg3small.jpg', title: 'Back Azul' },
+		{ full: '/img/pdp/pg4.jpg', thumb: '/img/pdp/pg4small.jpg', title: 'Front Azul' }
 	];
 	let selected_image = images[0];
 
@@ -44,25 +44,25 @@
 	let popular_items = [
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/back1.png',
+			image: '/img/popularitems/back1.png',
 			name: 'Kristina Dam Oak Table With White Marble Top',
 			price: '799.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/back2.png',
+			image: '/img/popularitems/back2.png',
 			name: 'Kristina Dam Oak Table With White Marble Top',
 			price: '2195.00'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/back3.png',
+			image: '/img/popularitems/back3.png',
 			name: 'Activate Facial Mask and Charcoal Soap',
 			price: '129.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/back4.png',
+			image: '/img/popularitems/back4.png',
 			name: 'Cocktail Table Walnut|YES',
 			price: '629.99'
 		}

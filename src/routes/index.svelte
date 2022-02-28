@@ -8,45 +8,45 @@
 	let popular_items = [
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item1.png',
+			image: '/img/popularitems/item1.png',
 			name: 'Kristina Dam Oak Table With White Marble Top',
 			price: '799.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item2.png',
+			image: '/img/popularitems/item2.png',
 			name: 'Hay-About A Lounge Chair AAL 93',
 			price: '659.55',
 			discounted: true
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item3.png',
+			image: '/img/popularitems/item3.png',
 			name: 'Activate Facial Mask and Charcoal Soap',
 			price: '129.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item4.png',
+			image: '/img/popularitems/item4.png',
 			name: 'Cocktail Table Walnut',
 			price: '629.99'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item5.png',
+			image: '/img/popularitems/item5.png',
 			name: 'Hay-About A Lounge Chair AAL 93',
 			price: '659.55'
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item6.png',
+			image: '/img/popularitems/item6.png',
 			name: 'Tory Desk Calendar',
 			price: '410.99',
 			discounted: true
 		},
 		{
 			component: ProductCard,
-			image: '/static/img/popularitems/item7.png',
+			image: '/img/popularitems/item7.png',
 			name: 'CH445 Wing Chair on Suite NY',
 			price: '330.55'
 		},
@@ -56,7 +56,7 @@
 	];
 
 	async function loadMore() {
-		const resp = await fetch('/static/products.json');
+		const resp = await fetch('/products.json');
 		let more_products = await resp.json();
 
 		for (let i = 0; i < more_products.length; i++) {
@@ -94,7 +94,7 @@
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="/static/img/carousel/carousel.png" alt="carousel-center" />
+				<img src="/img/carousel/carousel.png" alt="carousel-center" />
 				<div class="w-100">
 					<h5 class="fs-3">Control and manage any device with cloud solutions</h5>
 					<p>
@@ -107,7 +107,7 @@
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="/static/img/carousel/carousel-center.jpg" alt="carousel-center" />
+				<img src="/img/carousel/carousel-center.jpg" alt="carousel-center" />
 				<div>
 					<h5 class="fs-3 mx-auto text-center">
 						Control and manage any device with cloud solutions
@@ -122,7 +122,7 @@
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="/static/img/carousel/slider3.jpg" alt="carousel-right" />
+				<img src="/img/carousel/slider3.jpg" alt="carousel-right" />
 				<div>
 					<h5 class="fs-3 ms-auto text-end">Control and manage any device with cloud solutions</h5>
 					<p class="ms-auto text-end">
@@ -197,7 +197,7 @@
 <style>
 	/*banner osf*/
 	.banner-osf {
-		background: url(/static/img/banner/bannerosf.png) center no-repeat;
+		background: url(/img/banner/bannerosf.png) center no-repeat;
 		background-color: #262a32;
 		height: 445px;
 		color: #fff;
@@ -320,7 +320,7 @@
 	}
 
 	.discount {
-		background-image: url(/static/img/pdp/holidaysattribute.png);
+		background-image: url(/img/pdp/holidaysattribute.png);
 		width: 270px;
 		height: 335px;
 		padding-top: 50px;
