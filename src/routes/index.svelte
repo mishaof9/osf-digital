@@ -69,7 +69,7 @@
 
 <!--carousel banner-->
 <section class="carousel-container row g-0">
-	<div id="main-carousel" class="carousel slide col" data-bs-ride="false" data-bs-interval="false">
+	<div id="main-carousel" class="carousel slide col" data-bs-ride="false" data-bs-interval="5000">
 		<div class="carousel-indicators">
 			<button
 				type="button"
@@ -94,7 +94,7 @@
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="/img/carousel/carousel.png" alt="carousel-center" />
+				<img src="/img/carousel/carousel.jpg" alt="carousel-center" />
 				<div class="w-100">
 					<h5 class="fs-3">Control and manage any device with cloud solutions</h5>
 					<p>
@@ -135,18 +135,6 @@
 				</div>
 			</div>
 		</div>
-		<button
-			class="carousel-control-prev"
-			type="button"
-			data-bs-target="#main-carousel"
-			data-bs-slide="prev"
-		/>
-		<button
-			class="carousel-control-next"
-			type="button"
-			data-bs-target="#main-carousel"
-			data-bs-slide="next"
-		/>
 	</div>
 
 	<div class="sales col col-lg-auto d-none d-lg-block">
@@ -255,6 +243,11 @@
 		background-color: #ffffff;
 	}
 
+	.carousel-item {
+		border-radius: 10px;
+		overflow: hidden;
+	}
+
 	.carousel-indicators button {
 		border-radius: 50%;
 		width: 5px;
@@ -318,6 +311,7 @@
 
 	.sales {
 		text-align: center;
+		margin-left: 20px;
 	}
 
 	.discount {

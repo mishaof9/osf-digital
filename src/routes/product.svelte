@@ -166,7 +166,7 @@
 					{/each}
 				</select>
 			</div>
-			<div class="add ">
+			<div class="add">
 				<div class="amount">
 					<button on:click={() => qty--}>-</button>
 					<input type="number" name="amount" bind:value={qty} min="1" />
@@ -324,8 +324,8 @@
 
 	<PopularItems items={popular_items} />
 
-	<div class="scroll  d-sm-block d-md-none ">
-		<button on:click={() => window.scrollTo(0, 0)}>Scroll to top</button>
+	<div class="scroll d-sm-block d-md-none ">
+		<button class="mx-auto" on:click={() => window.scrollTo(0, 0)}>Scroll to top</button>
 	</div>
 </section>
 
@@ -441,6 +441,7 @@
 		color: #ffffff;
 
 		cursor: pointer;
+		border: none;
 		border-radius: 25px;
 		background-color: #84bc22;
 		padding-top: 5px;
@@ -509,12 +510,6 @@
 		margin-top: -18px;
 	}
 
-	.price {
-		color: #84bc22;
-		background-color: #ffffff;
-		border-radius: 16px;
-	}
-
 	.popular-items .hr {
 		border-top: 2px solid #3c4047;
 	}
@@ -522,23 +517,15 @@
 		margin: 0 2.5%;
 		padding-top: 40px;
 	}
-	.scroll a {
-		text-decoration: none;
-		color: #ffffff;
-	}
-	.scroll {
-		width: fit-content;
-		margin-left: 36%;
-		margin-right: 37%;
-		margin-top: 8%;
+	
+	.scroll button {
+		display: block;
+		margin-top: 20px;
 		background-color: #84bc22;
-		cursor: pointer;
+		color: #ffffff;
 		border-radius: 25px;
-		border: 1px solid #84bc22;
+		border: none;
 		text-transform: uppercase;
-		padding-top: 5px;
-		padding-bottom: 5px;
-		padding-left: 20px;
-		padding-right: 20px;
+		padding: 5px 20px;
 	}
 </style>
