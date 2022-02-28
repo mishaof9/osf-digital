@@ -3,36 +3,37 @@
 </script>
 
 <Card>
-	<img src="static/img/popularitems/item13.jpg" />
-	<div class="content">
+	<img src="/static/img/popularitems/item13.jpg" />
+	<div>
 		<p>My dragons are misbehaving again.</p>
         <p>Unbelieveable!</p>
-		<p>5H AGO</p>
+		<p><i class="bi bi-chat-dots" />5H AGO</p>
     </div>
-	<div class="overlay" />
 </Card>
 
 <style>
-	.content {
-		position: absolute;
-		top: 200px;
-		text-align: center;
-		color: #ffffff;
-        padding-left:5px;
-	}
-
-	.overlay {
+	div {
+		display: flex;
 		position: absolute;
 		top: 0;
 		height: 100%;
 		width: 100%;
-		opacity: 0;
-		transition: 0.1s linear;
+
+		padding: 20px;
+
+		flex-direction: column;
+		align-items: start;
+		justify-content: end;
+		text-align: left;
+
 		background: rgb(106, 93, 143);
 		background: linear-gradient(0deg, rgba(106, 93, 143, 0.8) 0%, rgba(203, 100, 138, 0.8) 100%);
-	}
+		color: #fff;
 
-	.overlay:hover {
-		opacity: 1;
-	}
+		}
+
+		i {
+			margin-right: 10px;
+			color: #84bc22;
+		}
 </style>

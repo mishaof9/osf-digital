@@ -3,7 +3,7 @@
 	import ProductCard from '$lib/cards/ProductCard.svelte';
 	import DragonsMisbeaving from '$lib/cards/DragonsMisbeaving.svelte';
 	import FeaturedProduct from '$lib/FeaturedProduct.svelte';
-	import PopularItems from '$lib/PopularItems.svelte';
+	import PopularItems from '$lib/Products.svelte';
 
 	let popular_items = [
 		{
@@ -54,32 +54,26 @@
 			component: DragonsMisbeaving
 		}
 	];
-	function loadMore() {
-		let product = {
-			component: ProductCard,
-			image: 'static/img/popularitems/item5.png',
-			name: 'Hay-About A Launge Chair AAL 93',
-			price: '695.55'
-		};
-		popular_items.push(product);
 
-		// we need so svelte can tell that we modified the array
-		popular_items = popular_items;
+	async function loadMore() {
+		const resp = await fetch('/static/products.json');
+		let more_products = await resp.json();
+
+		for (let i = 0; i < more_products.length; i++) {
+			more_products[i].component = ProductCard;
+		}
+
+		popular_items = popular_items.concat(more_products);
 	}
 </script>
 
 <!--carousel banner-->
-<section class="carousel-container row d-none d-md-flex">
-	<div
-		id="carouselExampleCaptions"
-		class="carousel slide col-lg-9"
-		data-bs-ride="false"
-		data-bs-interval="false"
-	>
+<section class="carousel-container row g-0">
+	<div id="main-carousel" class="carousel slide col" data-bs-ride="false" data-bs-interval="false">
 		<div class="carousel-indicators">
 			<button
 				type="button"
-				data-bs-target="#carouselExampleCaptions"
+				data-bs-target="#main-carousel"
 				data-bs-slide-to="0"
 				class="active"
 				aria-current="true"
@@ -87,85 +81,86 @@
 			/>
 			<button
 				type="button"
-				data-bs-target="#carouselExampleCaptions"
+				data-bs-target="#main-carousel"
 				data-bs-slide-to="1"
 				aria-label="Slide 2"
 			/>
 			<button
 				type="button"
-				data-bs-target="#carouselExampleCaptions"
+				data-bs-target="#main-carousel"
 				data-bs-slide-to="2"
 				aria-label="Slide 3"
 			/>
 		</div>
 		<div class="carousel-inner">
-			<div class="carousel-item active first-slide">
-				<img src="static/img/carousel/carousel.png" class="d-block w-100" alt="carousel-center" />
-				<div class="carousel-text d-none d-md-block">
-					<h5>Control and manage any<br /> device with cloud solutions</h5>
+			<div class="carousel-item active">
+				<img src="/static/img/carousel/carousel.png" alt="carousel-center" />
+				<div class="w-100">
+					<h5 class="fs-3">Control and manage any device with cloud solutions</h5>
 					<p>
-						Improve business perfomance and the user experience<br /> with the right mix of IoT technology
+						Improve business perfomance and the user experience with the right mix of IoT technology
 						and processes.
 					</p>
-					<div class="bottom-left button btn-view">View more</div>
+					<div class="view-more">
+						<button class="mx-auto ms-sm-5">View more</button>
+					</div>
 				</div>
 			</div>
-			<div class="carousel-item second-slide">
-				<img
-					src="static/img/carousel/carousel-center.jpg"
-					class="d-block w-100"
-					alt="carousel-center"
-				/>
-				<div class="carousel-text d-none d-md-block">
-					<h5>Control and manage any<br /> device with cloud solutions</h5>
-					<p>
-						Improve business perfomance and the user experience<br /> with the right mix of IoT technology
+			<div class="carousel-item">
+				<img src="/static/img/carousel/carousel-center.jpg" alt="carousel-center" />
+				<div>
+					<h5 class="fs-3 mx-auto text-center">
+						Control and manage any device with cloud solutions
+					</h5>
+					<p class="mx-auto text-center">
+						Improve business perfomance and the user experience with the right mix of IoT technology
 						and processes.
 					</p>
-					<div class="bottom-left button btn-view">View more</div>
+					<div class="view-more">
+						<button class="mx-auto">View more</button>
+					</div>
 				</div>
 			</div>
-			<div class="carousel-item third-slide">
-				<img src="static/img/carousel/slider3.jpg" class="d-block w-100" alt="carousel-right" />
-				<div class="carousel-text d-none d-md-block">
-					<h5>Control and manage any<br /> device with cloud solutions</h5>
-					<p>
-						Improve business perfomance and the user experience<br /> with the right mix of IoT technology
+			<div class="carousel-item">
+				<img src="/static/img/carousel/slider3.jpg" alt="carousel-right" />
+				<div>
+					<h5 class="fs-3 ms-auto text-end">Control and manage any device with cloud solutions</h5>
+					<p class="ms-auto text-end">
+						Improve business perfomance and the user experience with the right mix of IoT technology
 						and processes.
 					</p>
-					<div class="button btn-view">View more</div>
+					<div class="view-more">
+						<button class="mx-auto me-sm-5">View more</button>
+					</div>
 				</div>
 			</div>
 		</div>
 		<button
 			class="carousel-control-prev"
 			type="button"
-			data-bs-target="#carouselExampleCaptions"
+			data-bs-target="#main-carousel"
 			data-bs-slide="prev"
 		/>
 		<button
 			class="carousel-control-next"
 			type="button"
-			data-bs-target="#carouselExampleCaptions"
+			data-bs-target="#main-carousel"
 			data-bs-slide="next"
 		/>
 	</div>
 
-	<div class="sales-container column col-lg-3 d-none d-lg-block">
-		<img src="static/img/pdp/holidaysattribute.png" alt="holidaysattribute" />
-		<div class="top-center">55%</div>
-		<div class="bottom-center">Summer<br /> Sales</div>
-		<div class="right-center ">Follow us on Facebook</div>
-		<div class="bottom-right ">
-			Sed ut perspiciatis unde omnis iste <br /> natus error sit voluptatem
+	<div class="sales col col-lg-auto d-none d-lg-block">
+		<div class="discount">
+			<h1>55%</h1>
+			<h2>Summer Sales</h2>
 		</div>
-		<div class="btn-fb">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
-				><path
-					d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
-				/></svg
-			> <a href="https://www.facebook.com/OSFDigital/">Follow</a>
-		</div>
+
+		<h5>Follow us on Facebook</h5>
+		<p>Sed ut perspiciatis unde omnis iste <br /> natus error sit voluptatem</p>
+
+		<a href="https://www.facebook.com/OSFDigital/" target="_blank">
+			<i class="bi bi-facebook" /> Follow
+		</a>
 	</div>
 </section>
 
@@ -185,20 +180,14 @@
 
 	<PopularItems items={popular_items} />
 
-    <div class="text-center">
-        <button class="button" on:click={loadMore}>Load more</button>
-    </div>
+	<div class="text-center d-none d-lg-block">
+		<button on:click={loadMore}>Load more <i class="bi bi-arrow-clockwise" /></button>
+	</div>
 </section>
 
 <!--banner osf starts here-->
-
-<div class="row banner-osf" id="box-search">
-	<div class="thumbnail text-center">
-		<img src="static/img/banner/bannerosf.png" alt="banner" class="img-responsive" />
-		<div class="caption">
-			<p>Sed out perspiciatis une omnis iste natus error sit volptatem accusantium</p>
-		</div>
-	</div>
+<div class="banner-osf">
+	<p>Sed out perspiciatis une omnis iste natus error sit volptatem accusantium</p>
 </div>
 
 <FeaturedProduct />
@@ -208,19 +197,13 @@
 <style>
 	/*banner osf*/
 	.banner-osf {
-		max-width: 100%;
+		background: url(/static/img/banner/bannerosf.png) center no-repeat;
+		background-color: #262a32;
 		height: 445px;
-	}
-	.thumbnail {
-		position: relative;
-	}
-
-	.caption {
-		position: absolute;
-		top: 45%;
-		left: 0;
-		width: 100%;
-		color: #ffffff;
+		color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	/*popular items*/
@@ -228,11 +211,10 @@
 	.popular-items {
 		background-color: #262a32;
 		max-width: 100%;
-
 		padding-bottom: 50px;
 	}
 	.popular-items h4 {
-		color: #ffffff;
+		color: #fff;
 		text-align: center;
 		font-family: Lato ExtraBold, sans-serif;
 		font: size 20px;
@@ -240,19 +222,20 @@
 		width: fit-content;
 	}
 
-	.popular-items .button {
+	.popular-items button {
+		display: inline-block;
 		margin-top: 50px;
 		margin-bottom: 45px;
+		border: 2px solid #fff;
+		border-radius: 25px;
+		padding: 10px 100px;
 		background-color: #262a32;
-		color: #ffffff;
-		padding: 10px 20px;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		cursor: pointer;
-		border-radius: 16px;
-		width: 250px;
+		text-transform: uppercase;
+		color: #fff;
 		font-size: 18px;
+	}
+	.popular-items button i {
+		margin-left: 20px;
 	}
 
 	.popular-items .hr {
@@ -263,65 +246,12 @@
 	.divider {
 		margin: 0 2.5%;
 		padding-top: 40px;
+		margin-bottom: 20px;
 	}
 	/*carousel-banner*/
-
-	.carousel-item h5 {
-		font-family: Myriad Pro;
-		font-weight: bold;
-		font-size: 50px;
-	}
-	.carousel-item p {
-		font-family: Myriad Pro;
-		font-size: 18px;
-	}
-	.carousel-item img {
-		width: 807px;
-		height: 505px;
-	}
-	.first-slide .carousel-text {
-		position: absolute;
-		top: 80px;
-		left: 60px;
-		color: #ffffff;
-	}
-	.first-slide .carousel-text h5 {
-		margin-bottom: 90x;
-	}
-	.first-slide .carousel-text .btn-view {
-		margin-top: 50px;
-	}
-	.second-slide .carousel-text {
-		position: absolute;
-		top: 80px;
-		left: 150px;
-		color: #ffffff;
-		text-align: center;
-	}
-	.second-slide .carousel-text h5 {
-		margin-bottom: 100px;
-	}
-	.second-slide .carousel-text .btn-view {
-		margin-top: 30px;
-		margin-left: -60px;
-	}
-	.third-slide .carousel-text {
-		position: absolute;
-		top: 80px;
-		right: 75px;
-		color: #ffffff;
-		text-align: right;
-	}
-	.third-slide .carousel-text h5 {
-		margin-bottom: 100px;
-	}
-	.third-slide .carousel-text .btn-view {
-		margin-top: 30px;
-		right: 0px;
-	}
 	.carousel-container {
 		position: relative;
-		padding: 26px 56px;
+		padding: 26px 2.5%;
 		background-color: #ffffff;
 	}
 
@@ -331,105 +261,109 @@
 		height: 5px;
 	}
 
-	.top-left {
+	.carousel-item {
+		height: 505px;
+		color: #fff;
+		max-width: 1170px;
+	}
+
+	.carousel-item img {
 		position: absolute;
-		top: 65px;
-		left: 70px;
-		color: #ffffff;
+		right: 0;
+		height: 100%;
+	}
+
+	.carousel-item > div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+
+	.carousel-item h5 {
 		font-family: Myriad Pro;
 		font-weight: bold;
-		font-size: 40px;
+		padding: 5% 4%;
+		max-width: 650px;
 	}
-	.btn-view {
-		background-color: none;
-		border: 1px solid #ffffff;
-		color: #ffffff;
+	.carousel-item p {
+		box-sizing: content-box;
+		font-family: Myriad Pro;
+		padding: 5% 5%;
+		max-width: 530px;
+	}
+
+	.carousel-item .view-more {
+		position: absolute;
+		width: 100%;
+		bottom: 70px;
+	}
+
+	.carousel-item button {
+		display: block;
+		border-radius: 16px;
 		padding: 10px 20px;
+		background-color: inherit;
+		border: 1px solid #fff;
+		color: #fff;
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
-		display: inline-block;
-		position: absolute;
 		font-family: Lato Regular;
 		font-size: 15px;
 		cursor: pointer;
-		border-radius: 16px;
 	}
-	/*sales wraper*/
-	.sales-container {
-		position: relative;
-		padding-left: 20px;
+
+	.sales {
+		text-align: center;
 	}
-	.top-center {
-		position: absolute;
-		top: 5%;
-		left: 13%;
-		color: #ffffff;
-		font-size: 100px;
-		font-weight: bold;
+
+	.discount {
+		background-image: url(/static/img/pdp/holidaysattribute.png);
+		width: 270px;
+		height: 335px;
+		padding-top: 50px;
+		color: #fff;
+		margin-bottom: 30px;
 	}
-	.bottom-center {
-		position: absolute;
-		top: 40%;
-		left: 20%;
-		color: #ffffff;
-		font-size: 32px;
+
+	.discount h1 {
+		font-weight: bolder;
+		font-size: 80px;
+	}
+
+	.discount h2 {
+		margin: 0 auto;
+		margin-top: 70px;
 		text-transform: uppercase;
-		text-align: center;
+		width: 50%;
 	}
-	.right-center {
-		position: absolute;
-		top: 69%;
-		left: 8%;
-		color: #45413e;
-		font-size: 24px;
-		text-align: center;
+
+	.sales h5 {
+		font-size: 18px;
 	}
-	.bottom-right {
-		position: absolute;
-		top: 77%;
-		left: 8%;
-		color: #45413e;
-		font-size: 15px;
-		text-align: center;
+
+	.sales p {
+		font-size: 14px;
 	}
-	.btn-fb {
-		background-color: none;
-		border: 2px solid #3b5998;
-		color: #3b5998;
-		padding: 9px 5px;
-		text-align: center;
-		text-decoration: none;
+
+	.sales a {
+		display: inline-block;
 		width: 140px;
 		height: 40px;
-		display: inline-block;
-		margin-top: 125px;
-		margin-left: 55px;
-		cursor: pointer;
+		padding: 9px 5px;
+		border: 2px solid #3b5998;
 		border-radius: 20px;
+		margin-top: 10px;
+		color: #3b5998;
+		text-decoration: none;
 		text-transform: uppercase;
 		text-align: center;
 		font-size: 14px;
 	}
 
-	.btn-fb svg {
-		height: 100%;
-		fill: #3b5998;
-		float: left;
-		padding-left: 14px;
-	}
-	.btn-fb a {
-		text-decoration: none;
-		color: #3b5998;
-	}
-	.btn-fb:hover {
-		opacity: 1;
-		background-color: #3b5998;
-	}
-	.btn-fb:hover a {
-		color: #ffffff;
-	}
-	.btn-fb:hover svg {
-		fill: #ffffff;
+	.sales i {
+		margin-right: 15px;
 	}
 </style>

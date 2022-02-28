@@ -34,15 +34,12 @@
 
 <style>
 	form {
-		position: absolute;
 		width: 429px;
 		height: 465px;
 		text-align: center;
 		border-radius: 10px;
 		padding: 50px;
 		background-color: white;
-		margin-top: 150px;
-		margin-left: 400px;
 	}
 	h3 {
 		margin-top: 50px;

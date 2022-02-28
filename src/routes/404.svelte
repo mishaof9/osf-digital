@@ -1,18 +1,21 @@
-<div class="wrapper home-404">
-	<ul>
-		<li class="li-home"><a href="/">Home</a></li>
-		<li class="li-empty">/</li>
-		<li class="li-404">404</li>
-	</ul>
-	<h2>404</h2>
-</div>
+<script>
+	import Breadcrumb from '$lib/nav/Breadcrumb.svelte';
+	import Breadcrumbs from '$lib/nav/Breadcrumbs.svelte';
+</script>
 
-<div class="main-error">
-	<div class="oops">
-		<div class="centered">Oops!</div>
+<Breadcrumbs>
+	<Breadcrumb href="/" name="OSF Theme" />
+	<Breadcrumb name="404" />
+</Breadcrumbs>
+
+<h1 class="text-center">404</h1>
+
+<div class="error-page row">
+	<div class="col oops">
+		<h1>Oops!</h1>
 	</div>
 
-	<div class="info">
+	<div class="col info col-12 col-md-auto">
 		<h3>Sorry, this page could not be found!</h3>
 		<p>
 			Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus <br />et magnis
@@ -22,7 +25,7 @@
 			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula<br />
 			eget dolor. Aenean massa.
 		</p>
-		<a href="index.svelte">Go back to Homepage</a>
+		<a href="/">Go back to Homepage</a>
 		<h3>Search our site</h3>
 		<div class="search">
 			<input type="text" placeholder="SEARCH" />
@@ -32,90 +35,44 @@
 </div>
 
 <style>
-	.main-error {
+	.error-page {
 		background-color: #ffffff;
-		margin-left: 50px;
-		margin-right: 50px;
-		margin-top: 90px;
-		height: 450px;
-		margin-bottom: 40px;
+		margin: 30px 2.5%;
+		padding: 20px;
 	}
 
-	.home-404 {
-		width: 100%;
-		align-self: center;
-		margin-top: 100px;
-	}
-	.home-404 ul {
+	.oops {
 		display: flex;
-		list-style: none;
+		align-items: center;
 		justify-content: center;
-		left: 545px;
-		top: -55px;
+		background: url(static/img/404/oops.png) -100px no-repeat;
 	}
-	.li-home a {
+
+	.oops h1 {
+		font-size: 100px;
+		font-weight: bold;
+		color: #84bc22;
+	}
+
+	.error-page a {
 		text-decoration: none;
 		font-size: 17px;
 		color: #84bc22;
 		font-weight: bold;
 	}
-	.li-404 {
-		font-size: 17px;
-		color: black;
-		font-weight: bold;
-	}
-	.li-empty {
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-	.home-404 h2 {
-		text-align: center;
-		font-size: 64px;
-		margin-left: 30px;
-		padding-top: 20px;
-	}
-	.oops {
-		margin-top: 35px;
-		float: left;
-		width: 366px;
-		height: 366px;
-		background: url(static/img/404/oops.png) -100px no-repeat;
-	}
-	.oops .centered {
-		margin-top: 55px;
-		margin-left: 30px;
-		font-size: 125px;
-		font-weight: bold;
-		color: #84bc22;
-	}
 
-	.info {
-		display: grid;
-		padding-left: 75px;
-		padding-top: 35px;
-	}
-	.info h3 {
+	h3 {
 		font-size: 26px;
 		font-weight: bold;
 		padding-bottom: 10px;
 	}
-	.info p {
-		font-size: 18px;
-		padding-top: 0px;
-		margin-top: 5px;
-	}
-	.info a {
-		font-size: 20px;
-		color: #84bc22;
-		text-decoration: none;
-		padding-top: 10px;
-		padding-bottom: 10px;
-	}
-	.info .search {
+
+	.search {
 		position: relative;
 		width: 80%;
 	}
-	.info .search > input {
+
+	.search > input {
 		border-radius: 35px;
 		border: 3px solid #f1edea;
 		padding: 5px 10px;
@@ -130,7 +87,7 @@
 		top: 15px;
 		fill: #45413e;
 	}
-	.info .search > input:focus {
+	.search > input:focus {
 		border-color: #45413e;
 	}
 </style>

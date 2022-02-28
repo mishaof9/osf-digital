@@ -1,13 +1,10 @@
 <script>
 	import Benefits from '$lib/Benefits.svelte';
-	import CardContainer from '$lib/cards/CardContainer.svelte';
 	import ProductCard from '$lib/cards/ProductCard.svelte';
 	import Breadcrumbs from '$lib/nav/Breadcrumbs.svelte';
 	import Breadcrumb from '$lib/nav/Breadcrumb.svelte';
-	import ProductImage from '$lib/modals/ProductImage.svelte';
 	import Social from '$lib/Social.svelte';
-	import PopularItems from '$lib/PopularItems.svelte';
-import DragonsMisbeaving from '$lib/cards/DragonsMisbeaving.svelte';
+	import PopularItems from '$lib/Products.svelte';
 
 	function chunk(arr, len) {
 		var chunks = [],
@@ -70,6 +67,13 @@ import DragonsMisbeaving from '$lib/cards/DragonsMisbeaving.svelte';
 			price: '629.99'
 		}
 	];
+
+	function add_to_cart() {
+		let count = +localStorage.getItem('cart');
+		count += qty;
+		localStorage.setItem('cart', count);
+		window.dispatchEvent(new Event('product_changed'))
+	}
 </script>
 
 <Breadcrumbs>
@@ -77,7 +81,7 @@ import DragonsMisbeaving from '$lib/cards/DragonsMisbeaving.svelte';
 	<Breadcrumb name="Ruffle Front V-Neck Cardigan" />
 </Breadcrumbs>
 
-<h2 class="page-name"><span class="d-none d-sm-inline">Ruffle Front </span>V-Neck Cardigan</h2>
+<h1 class="text-center"><span class="d-none d-sm-inline">Ruffle Front </span>V-Neck Cardigan</h1>
 
 <div class="container-fuild px-4">
 	<div class="row">
@@ -168,7 +172,7 @@ import DragonsMisbeaving from '$lib/cards/DragonsMisbeaving.svelte';
 					<input type="number" name="amount" bind:value={qty} min="1" />
 					<button on:click={() => qty++}>+</button>
 				</div>
-				<button class="cart-btn">Add to cart</button>
+				<button on:click={add_to_cart} class="cart-btn">Add to cart</button>
 			</div>
 			<p>
 				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -321,18 +325,13 @@ import DragonsMisbeaving from '$lib/cards/DragonsMisbeaving.svelte';
 	<PopularItems items={popular_items} />
 
 	<div class="scroll  d-sm-block d-md-none ">
-		<button>Scroll to top</button>
+		<button on:click={() => window.scrollTo(0, 0)}>Scroll to top</button>
 	</div>
 </section>
 
 <Benefits />
 
 <style>
-	.page-name {
-		width: 100%;
-		text-align: center;
-	}
-
 	.container-fuild {
 		background-color: #ffffff;
 	}
@@ -378,7 +377,7 @@ import DragonsMisbeaving from '$lib/cards/DragonsMisbeaving.svelte';
 		border-color: black;
 		background-color: white;
 	}
-    
+
 	.first-price {
 		font-size: 44px;
 		font-weight: bold;
@@ -422,8 +421,9 @@ import DragonsMisbeaving from '$lib/cards/DragonsMisbeaving.svelte';
 		cursor: pointer;
 		background-color: #ffffff;
 	}
+
 	.amount input::-webkit-outer-spin-button, /*hide the tml nr input */
-.amount input::-webkit-inner-spin-button {
+	.amount input::-webkit-inner-spin-button {		
 		-webkit-appearance: none;
 		margin: 0;
 	}
@@ -467,6 +467,7 @@ import DragonsMisbeaving from '$lib/cards/DragonsMisbeaving.svelte';
 	/* nu-tabs */
 	.infos {
 		background-color: #ffffff;
+		padding-top: 80px;
 	}
 	#myTab button {
 		border: none;
@@ -521,22 +522,23 @@ import DragonsMisbeaving from '$lib/cards/DragonsMisbeaving.svelte';
 		margin: 0 2.5%;
 		padding-top: 40px;
 	}
-	.scroll button {
+	.scroll a {
+		text-decoration: none;
 		color: #ffffff;
-		background-color: #84bc22;
-		cursor: pointer;
-		border-radius: 25px;
-		border: 1px solid #84bc22;
-		padding-top: 5px;
-		padding-bottom: 5px;
-		padding-left: 20px;
-		padding-right: 20px;
-		text-transform: uppercase;
 	}
 	.scroll {
 		width: fit-content;
 		margin-left: 36%;
 		margin-right: 37%;
 		margin-top: 8%;
+		background-color: #84bc22;
+		cursor: pointer;
+		border-radius: 25px;
+		border: 1px solid #84bc22;
+		text-transform: uppercase;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 </style>

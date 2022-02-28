@@ -24,5 +24,9 @@
 		height: 100vh;
 		background-color: rgba(100, 100, 100, 0.5);
 		z-index: 1000;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 </style>

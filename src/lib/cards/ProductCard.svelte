@@ -5,6 +5,13 @@
 	export let name;
 	export let price;
 	export let discounted = false;
+
+	function add_to(what) {
+		let count = localStorage.getItem(what);
+		count++;
+		localStorage.setItem(what, count);
+		window.dispatchEvent(new Event('product_changed'))
+	}
 </script>
 
 <Card>
@@ -14,23 +21,23 @@
 		{#if discounted}
 			<div class="btn-group discounted">
 				<button type="button" class="btn discount-price">$ {price}</button>
-				<button type="button" class="btn buynow">BUY NOW</button>
+				<button on:click={() => add_to('cart')} type="button" class="btn buynow">BUY NOW</button>
 			</div>
 		{:else}
 			<p class="price">$ {price}</p>
 
 			<div class="overlay">
-				<i class="bi bi-plus" />
-				<i class="bi bi-heart-fill" />
+				<i on:click={() => add_to('cart')} class="bi bi-plus" />
+				<i on:click={() => add_to('wishlist')} class="bi bi-heart-fill" />
 			</div>
 		{/if}
 	</div>
 </Card>
 
 <style>
-    .product {
-        height: 365px;
-    }
+	.product {
+		height: 365px;
+	}
 
 	img {
 		height: 260px;

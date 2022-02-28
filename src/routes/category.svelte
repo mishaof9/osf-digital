@@ -1,18 +1,120 @@
 <script>
 	import ProductCard from '$lib/cards/ProductCard.svelte';
 	import FeaturedProduct from '$lib/FeaturedProduct.svelte';
+import Breadcrumb from '$lib/nav/Breadcrumb.svelte';
+import Breadcrumbs from '$lib/nav/Breadcrumbs.svelte';
+	import PopularItems from '$lib/Products.svelte';
+
+	let products = [
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item3.png',
+			name: 'Kristina Dam Oak Table With White Marble Top',
+			price: '799.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item1.png',
+			name: 'EAMES x Cast + Crew - Custom Powder Coated ',
+			price: '799.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item2.png',
+			name: 'Activate Facial Mask and Charcoal Soap',
+			price: '129.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item12.png',
+			name: 'Vitra Cork Stool B, Cork - Design Within Reach',
+			price: '299.99'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item6.png',
+			name: 'Hay-About A Lounge Chair AAL 93',
+			price: '659.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item5.png',
+			name: 'TORY DESK CALENDAR',
+			price: '410.99'
+		},
+
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/notfound.png',
+			name: 'CH445 Wing Chair on  SUITE NY',
+			price: '330.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/notfound.png',
+			name: 'CH445 Wing Chair on  SUITE NY',
+			price: '330.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/notfound.png',
+			name: 'Kristina Dam Oak Table With White Marble Top',
+			price: '2195.00'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/notfound.png',
+			name: 'MONOQI | Ø55 Crossit  Table - Wht/Grn',
+			price: '299.99'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item6.png',
+			name: 'Vitra Cork Stool B, Cork - Design Within Reach',
+			price: '870.95'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/notfound.png',
+			name: 'Activate Facial Mask and Charcoal Soap ',
+			price: '199.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/notfound.png',
+			name: 'Hay-About A Lounge Chair AAL 93',
+			price: '659.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/item7.png',
+			name: 'TORY DESK CALENDAR',
+			price: '410.99'
+		},
+
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/menu.jpg',
+			name: 'EAMES x Cast + Crew - Custom Powder Coated ',
+			price: '330.55'
+		},
+		{
+			component: ProductCard,
+			image: '/static/img/popularitems/notfound.png',
+			name: 'CH445 Wing Chair on  SUITE NY',
+			price: '330.55'
+		}
+	];
 </script>
 
-<section class="category-page">
-	<div class="wrapper home-category">
-		<ul>
-			<li class="li-hm"><a href="/">Home </a></li>
-			<li class="li-slash">/</li>
-			<li class="li-category"><a href="/"> Category Landing Services</a></li>
-		</ul>
-		<h2>Services</h2>
-	</div>
+<Breadcrumbs>
+	<Breadcrumb href="/" name="OSF Theme" />
+	<Breadcrumb name="Category Landing Services" />
+</Breadcrumbs>
 
+<h1 class="text-center">Services</h1>
+
+<section class="category-page">
 	<div class="filters">
 		<div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
 			<div class="col price-filter">
@@ -74,114 +176,14 @@
 
 	<div class="total-results"><h6>12.932 results in apparel</h6></div>
 </section>
-<!--
-<CardContainer>
-	<ProductCard
-		name="Kristina Dam Oak Table With White Marble Top"
-		img="static/img/popularitems/item3.png"
-		price="799.55"
-	/>
-	<ProductCard
-		name="EAMES x Cast + Crew - Custom Powder Coated "
-		img="static/img/popularitems/item1.png"
-		price="799.55"
-	/>
-	<ProductCard
-		name="Activate Facial Mask and Charcoal Soap"
-		img="static/img/popularitems/item2.png"
-		price="129.55"
-	/>
-	<ProductCard
-		name="Vitra Cork Stool B, Cork - Design Within Reach"
-		img="static/img/popularitems/item12.png"
-		price="299.99"
-	/>
-	<ProductCard
-		name="Hay-About A Lounge Chair AAL 93"
-		img="static/img/popularitems/item6.png"
-		price="659.55"
-	/>
-	<ProductCard name="TORY DESK CALENDAR" img="static/img/popularitems/item5.png" price="410.99" />
-	<ProductCard
-		name="CH445 Wing Chair on  SUITE NY"
-		img="static/img/popularitems/notfound.png"
-		price="330.55"
-	/>
-	<ProductCard
-		name="CH445 Wing Chair on  SUITE NY"
-		img="static/img/popularitems/notfound.png"
-		price="330.55"
-	/>
-	<ProductCard
-		name="Kristina Dam Oak Table With White Marble Top"
-		img="static/img/popularitems/notfound.png"
-		price="2195.00"
-	/>
-	<ProductCard
-		name="MONOQI | Ø55 Crossit  Table - Wht/Grn"
-		img="static/img/popularitems/notfound.png"
-		price="299.99"
-	/>
-	<ProductCard
-		name="Vitra Cork Stool B, Cork - Design Within Reach"
-		img="static/img/popularitems/item6.png"
-		price="870.95"
-	/>
-	<ProductCard
-		name="Activate Facial Mask and Charcoal Soap "
-		img="static/img/popularitems/notfound.png"
-		price="199.55"
-	/>
-	<ProductCard
-		name="Hay-About A Lounge Chair AAL 93"
-		img="static/img/popularitems/notfound.png"
-		price="659.55"
-	/>
-	<ProductCard name="TORY DESK CALENDAR" img="static/img/popularitems/item7.png" price="410.99" />
-	<ProductCard
-		name="EAMES x Cast + Crew - Custom Powder Coated "
-		img="static/img/popularitems/menu.jpg"
-		price="330.55"
-	/>
-	<ProductCard
-		name="CH445 Wing Chair on  SUITE NY"
-		img="static/img/popularitems/notfound.png"
-		price="330.55"
-	/>
-</CardContainer>
--->
-<div class="button load-more"> Load more</div>
-	
+
+<PopularItems slide={false} items={products} />
+
+<div class="button load-more">Load more</div>
 
 <FeaturedProduct />
 
 <style>
-	.home-category ul {
-		display: flex;
-		list-style: none;
-		justify-content: center;
-		margin-top: 60px;
-	}
-	.home-category ul li {
-		padding: 0px 5px;
-	}
-	.li-hm a {
-		text-decoration: none;
-		font-size: 17px;
-		color: #84bc22;
-		font-weight: bold;
-	}
-	.li-category a {
-		text-decoration: none;
-		font-size: 17px;
-		color: black;
-	}
-	.home-category h2 {
-		font-weight: bold;
-		font-size: 40px;
-		padding-top: 10px;
-		text-align: center;
-	}
 	.filters {
 		background-color: #fff;
 		margin: 0px 4.3%;
@@ -292,11 +294,8 @@
 		color: #ffffff;
 		background-color: #84bc22;
 		padding: 5px 20px;
-		width:fit-content;
-		margin:5% auto;
-	    text-align: center;
-	
-		
-		
+		width: fit-content;
+		margin: 5% auto;
+		text-align: center;
 	}
 </style>
