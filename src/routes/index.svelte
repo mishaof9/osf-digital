@@ -102,7 +102,7 @@
 						and processes.
 					</p>
 					<div class="view-more">
-						<button class="mx-auto ms-sm-5">View more</button>
+						<a href="/category" class="mx-auto ms-sm-5">View more</a>
 					</div>
 				</div>
 			</div>
@@ -117,7 +117,7 @@
 						and processes.
 					</p>
 					<div class="view-more">
-						<button class="mx-auto">View more</button>
+						<a href="/category" class="mx-auto">View more</a>
 					</div>
 				</div>
 			</div>
@@ -130,7 +130,7 @@
 						and processes.
 					</p>
 					<div class="view-more">
-						<button class="mx-auto me-sm-5">View more</button>
+						<a href="/category" class="mx-auto me-sm-5">View more</a>
 					</div>
 				</div>
 			</div>
@@ -300,8 +300,9 @@
 		bottom: 70px;
 	}
 
-	.carousel-item button {
+	.carousel-item a {
 		display: block;
+		width: fit-content;
 		border-radius: 16px;
 		padding: 10px 20px;
 		background-color: inherit;

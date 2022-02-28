@@ -10,12 +10,12 @@
 		let count = localStorage.getItem(what);
 		count++;
 		localStorage.setItem(what, count);
-		window.dispatchEvent(new Event('product_changed'))
+		window.dispatchEvent(new Event('product_changed'));
 	}
 </script>
 
 <Card>
-	<div class="product">
+	<a href="/product" class="product">
 		<img src={image} alt={name} />
 		<p class="name">{name}</p>
 		{#if discounted}
@@ -26,17 +26,23 @@
 		{:else}
 			<p class="price">$ {price}</p>
 
-			<div class="overlay">
+			<a href="/product" class="overlay">
 				<i on:click={() => add_to('cart')} class="bi bi-plus" />
 				<i on:click={() => add_to('wishlist')} class="bi bi-heart-fill" />
-			</div>
+			</a>
 		{/if}
-	</div>
+	</a>
 </Card>
 
 <style>
 	.product {
 		height: 365px;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+		color: black;
 	}
 
 	img {
