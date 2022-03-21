@@ -15,8 +15,8 @@
 		border-radius: 5px;
 
 		background: white;
-
-		font-size: 15px;
+        font-family: 'Times New Roman', Times, serif;
+		font-size: 17px;
 		line-height: 15px;
 		letter-spacing: 1px;
 		text-align: center;

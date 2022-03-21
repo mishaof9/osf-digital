@@ -27,8 +27,8 @@
 			<p class="price">$ {price}</p>
 
 			<a href="/product" class="overlay">
-				<i on:click={() => add_to('cart')} class="bi bi-plus" />
-				<i on:click={() => add_to('wishlist')} class="bi bi-heart-fill" />
+				<i on:click|preventDefault={() => add_to('cart')} class="bi bi-plus" />
+				<i on:click|preventDefault={() => add_to('wishlist')} class="bi bi-heart-fill" />
 			</a>
 		{/if}
 	</a>

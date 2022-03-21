@@ -227,9 +227,10 @@
 
 	footer a {
 		text-decoration: none;
-		color: #7c7a78;
+		color: #6d6b6a;
+		
 	}
-
+    
 	.mail,
 	.phone {
 		color: black;
@@ -263,7 +264,7 @@
 	.actions a {
 		display: inline-block;
 		padding: 19px 18px;
-		color: #a8a6a5;
+		color: #6d6b6a;
 	}
 
 	.actions i {

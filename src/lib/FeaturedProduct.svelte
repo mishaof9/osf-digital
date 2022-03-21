@@ -127,10 +127,12 @@
 		color: #ffffff;
 		text-align: center;
 		margin-top: 30px;
+		
 	}
 	.featured-product h6 {
 		color: #ffffff;
 		text-align: center;
+	
 	}
 	.hr {
 		display: inline-block;
@@ -161,11 +163,12 @@
 		font-size: 20px;
 		margin-top: 10px;
 		line-height: 25px;
+		font-family: 'Times New Roman', Times, serif;
 	}
 	.featured h5 {
 		color: #84bc22;
 		text-align: center;
-		font-family: Lato ExtraBold, sans-serif;
+		font-family:'Times New Roman', Times, serif;
 		font-size: 18px;
 	}
 </style>

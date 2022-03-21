@@ -384,7 +384,7 @@
 
 	.osf-logo .academy {
 		color: #84bc22;
-		font-weight: 400;
+		font-weight: 600;
 		font-size: 18px;
 		letter-spacing: 0.1rem;
 		line-height: 1.5em;
@@ -418,8 +418,9 @@
 		padding-top: 17px;
 		height: 66px;
 		text-transform: uppercase;
-		font-size: 12px;
+		font-size: 15px;
 		font-weight: 400;
+		font-family:'Times New Roman', Times, serif;
 	}
 
 	.navbar .megamenu {
@@ -433,6 +434,7 @@
 		color: #fff;
 		line-height: 30px;
 		font-size: 15px;
+		font-family:'Times New Roman', Times, serif;
 	}
 
 	.megamenu h6 {
@@ -451,7 +453,7 @@
 	}
 
 	.prefs .nav-link {
-		color: #a8a6a5;
+		color: #6d6b6a;
 	}
 
 	.actions {
@@ -461,7 +463,7 @@
 	#menu-nav .actions a {
 		padding: 0 18px;
 		margin-top: 25px;
-		color: #a8a6a5;
+		color: #6d6b6a;
 	}
 
 	.actions i {

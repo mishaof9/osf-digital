@@ -192,6 +192,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		font-family: Arial, Helvetica, sans-serif;
 	}
 
 	/*popular items*/
@@ -250,8 +251,8 @@
 
 	.carousel-indicators button {
 		border-radius: 50%;
-		width: 5px;
-		height: 5px;
+		width: 7px;
+		height: 7px;
 	}
 
 	.carousel-item {
@@ -275,16 +276,17 @@
 	}
 
 	.carousel-item h5 {
-		font-family: Myriad Pro;
+		font-family: 'Times New Roman', Times, serif;
 		font-weight: bold;
 		padding: 5% 4%;
 		max-width: 650px;
 	}
 	.carousel-item p {
 		box-sizing: content-box;
-		font-family: Myriad Pro;
+		font-family: 'Times New Roman', Times, serif;
 		padding: 5% 5%;
 		max-width: 530px;
+		font-size: 18px;
 	}
 
 	.carousel-item .view-more {
@@ -299,7 +301,7 @@
 		border-radius: 16px;
 		padding: 10px 20px;
 		background-color: inherit;
-		border: 1px solid #fff;
+		border: 2px solid #fff;
 		color: #fff;
 		text-align: center;
 		text-decoration: none;
@@ -326,6 +328,7 @@
 	.discount h1 {
 		font-weight: bolder;
 		font-size: 80px;
+		font-family: Lato;
 	}
 
 	.discount h2 {
@@ -333,14 +336,18 @@
 		margin-top: 70px;
 		text-transform: uppercase;
 		width: 50%;
+		font-family: Lato;
 	}
 
 	.sales h5 {
 		font-size: 18px;
+		font-family: Lato;
+		
 	}
 
 	.sales p {
 		font-size: 14px;
+		font-family: Lato;
 	}
 
 	.sales a {
@@ -357,8 +364,11 @@
 		text-align: center;
 		font-size: 14px;
 	}
-
+    .sales a:hover{
+		background-color: #3b5998;
+		color:#fff;
+	}
 	.sales i {
-		margin-right: 15px;
+		margin-right: 10px;
 	}
 </style>

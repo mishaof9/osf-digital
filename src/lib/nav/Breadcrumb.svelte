@@ -22,5 +22,6 @@
 		color: #84bc22;
 		font-weight: bold;
 		padding: 0 10px;
+		font-family: 'Times New Roman', Times, serif;
 	}
 </style>

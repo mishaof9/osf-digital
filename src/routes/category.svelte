@@ -285,8 +285,8 @@ import Breadcrumbs from '$lib/nav/Breadcrumbs.svelte';
 	}
 	.total-results {
 		text-align: center;
-		font-family: Lato, sans-serif;
-		font-size: 16px;
+		font-family: 'Times New Roman', Times, serif;
+		font-size: 18px;
 	}
 	.load-more {
 		border-radius: 16px;

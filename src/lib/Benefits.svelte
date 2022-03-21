@@ -62,7 +62,7 @@
 		margin-top: 36px;
 	}
 	.benefits p {
-		color: #7d7a77;
+		color: #bbb9b8;
 		text-align: left;
 		margin-bottom: 50px;
 		margin-right: auto;
