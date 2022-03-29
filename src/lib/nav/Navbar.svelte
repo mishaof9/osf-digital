@@ -229,7 +229,7 @@
 						</div>
 					</div>
 				</li>
-				<li class="nav-item "><a class="nav-link" href="#">Company </a></li>
+				<li class="nav-item "><a class="nav-link" href="/countdown">Company </a></li>
 				<li class="nav-item"><a class="nav-link" href="#"> Library </a></li>
 				<li class="nav-item"><a class="nav-link" href="#"> Contact Us</a></li>
 			</ul>

@@ -18,14 +18,11 @@
 		top: 0;
 		height: 100%;
 		width: 100%;
-
 		padding: 20px;
-
 		flex-direction: column;
 		align-items: start;
 		justify-content: end;
 		text-align: left;
-
 		background: rgb(106, 93, 143);
 		background: linear-gradient(0deg, rgba(106, 93, 143, 0.8) 0%, rgba(203, 100, 138, 0.8) 100%);
 		color: #fff;

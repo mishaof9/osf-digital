@@ -7,7 +7,12 @@
 
 <Navbar />
 
-<slot />
+<div class="container-xl">
+	<slot />
+</div>
 
 <Footer />
 
+<!--change body color; 
+	
+-->
